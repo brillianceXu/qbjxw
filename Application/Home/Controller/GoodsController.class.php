@@ -1,0 +1,74 @@
+<?php
+namespace Home\Controller;
+class GoodsController extends BaseController {
+    public function index(){
+    	$Cmodel=M("category");
+    	$model=M("goods");
+    	// $cate=$Cmodel->where("pid=2 and status=1")->select();
+        $cond['status']=1;
+        $cond['pid']=2;
+        $cate=$Cmodel->where($cond)->select();
+        foreach ($cate as $k => $v) {
+            $child=$Cmodel->where("pid=".$v['id'])->select();
+            $cate[$k]['child']=$child;
+        }
+        // $cate=$cate['child'];
+        // print_r($cate);exit;
+    	$cid=I("cid");
+
+    	// 
+    	
+        if($cid){
+            $where['cid']=$cid;
+            $pmess=$Cmodel->where("id=".$cid)->find();
+            $cname=$pmess['cname'];
+            $ccname=$Cmodel->where("id=".$pmess['pid'])->getField("cname");
+            $cname.="--".$ccname;
+        }
+    	$page=$_GET['page'];
+      	$page=($page==null)?"1":$page;
+      	$pageSize=20;
+      	$article_count=$model->where($where)->count();
+      	$totalPage=ceil($article_count/$pageSize);
+      	$start=($page-1)*$pageSize;
+
+    	$mess=$model->where($where)->limit($start,$pageSize)->select();
+
+    	$this->assign("cname",$cname);
+    	$this->assign("cid",$cid);
+    	$this->assign("page",$page);
+    	$this->assign("totalPage",$totalPage);
+    	$this->assign("article_count",$article_count);
+    	$this->assign("cate",$cate);
+    	$this->assign("mess",$mess);
+        $this->display();
+    }
+    public function detail(){
+    	$Cmodel=M("category");
+    	$model=M("goods");
+        $cond['status']=1;
+        $cond['pid']=2;
+        $category=$Cmodel->where($cond)->select();
+        foreach ($category as $k => $v) {
+            $arr[]=$v['id'];
+        }
+        $arr=implode(",", $arr);
+        $arr=trim($arr,",");
+        $cate=$Cmodel->where("pid in (".$arr.")")->select();
+    	// $cate=$Cmodel->where("pid=4 and status=1")->select();
+    	$id=I("id");
+    	$where['id']=$id;
+    		
+
+    	$mess=$model->where($where)->find();
+    	$cid=$mess['cid'];
+    	// $cname=$Cmodel->where("id=".$cid)->getField("cname");
+
+    	// print_r($cate);exit;
+    	$this->assign("cid",$cid);
+    	// $this->assign("cname",$cname);
+    	$this->assign("cate",$cate);
+    	$this->assign("mess",$mess);
+        $this->display();
+    }
+}

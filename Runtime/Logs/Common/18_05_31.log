@@ -1,0 +1,390 @@
+[ 2018-05-31T09:16:48+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000881s ]
+ERR: 无法加载模块:Favicon
+
+[ 2018-05-31T09:18:32+08:00 ] 127.0.0.1 /Public/static/css/dot.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:18:32+08:00 ] 127.0.0.1 /Public/static/css/list-ioc.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000859s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:18:32+08:00 ] 127.0.0.1 /Public/static/css/ad_ctr.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001303s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:18:33+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:19:37+08:00 ] 127.0.0.1 /Public/static/css/dot.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:19:37+08:00 ] 127.0.0.1 /Public/static/css/ad_ctr.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:19:37+08:00 ] 127.0.0.1 /Public/static/css/list-ioc.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:19:37+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004697s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:23:08+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001652s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:23:10+08:00 ] 127.0.0.1 /Public/static/css/dot.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:23:10+08:00 ] 127.0.0.1 /Public/static/css/ad_ctr.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001205s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:23:10+08:00 ] 127.0.0.1 /Public/static/css/list-ioc.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001299s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:23:10+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:28:27+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001887s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:56:55+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:56:55+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T09:56:55+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:02:32+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:02:32+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:02:34+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:02:46+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:02:46+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001903s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:02:46+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001351s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:19:34+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:19:34+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:19:34+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:22:46+08:00 ] 127.0.0.1 /Public/static/css/dot.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002595s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:22:46+08:00 ] 127.0.0.1 /Public/static/css/list-ioc.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000962s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T10:22:46+08:00 ] 127.0.0.1 /Public/static/css/ad_ctr.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:03:39+08:00 ] 127.0.0.1 /Public/static/css/list-ioc.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:03:39+08:00 ] 127.0.0.1 /Public/static/css/dot.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002304s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:03:39+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:04:17+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:04:18+08:00 ] 127.0.0.1 /Public/static/css/dot.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000800s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:04:18+08:00 ] 127.0.0.1 /Public/static/css/ad_ctr.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:04:18+08:00 ] 127.0.0.1 /Public/static/css/list-ioc.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:04:18+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:04:18+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:12:14+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002112s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:12:14+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:12:14+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002858s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:22:21+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:22:21+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:22:22+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:22:32+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:22:32+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000946s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:22:32+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:23:16+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:23:16+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:23:19+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:24:22+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002655s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:24:22+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000168s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005069s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:39:14+08:00 ] 127.0.0.1 /Category/category_list/type.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+ERR: 无法加载模块:Category
+
+[ 2018-05-31T11:39:20+08:00 ] 127.0.0.1 /Category/category_list/type.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+ERR: 无法加载模块:Category
+
+[ 2018-05-31T11:39:42+08:00 ] 127.0.0.1 /Admn/Category/category_list/type.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+ERR: 无法加载模块:Admn
+
+[ 2018-05-31T11:39:55+08:00 ] 127.0.0.1 /Admn/Category/category_list/type.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+ERR: 无法加载模块:Admn
+
+[ 2018-05-31T11:40:24+08:00 ] 127.0.0.1 /Admn/Category/category_list/type.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+ERR: 无法加载模块:Admn
+
+[ 2018-05-31T11:51:11+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:51:17+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:51:17+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T11:51:17+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T12:57:40+08:00 ] 127.0.0.1 /Public/static/css/title-bg.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T12:57:40+08:00 ] 127.0.0.1 /Public/static/css/di-logo.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+ERR: 无法加载模块:Public
+
+[ 2018-05-31T13:05:18+08:00 ] 127.0.0.1 /Public/static/css/nav_bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003147s ]
+ERR: 无法加载模块:Public
+

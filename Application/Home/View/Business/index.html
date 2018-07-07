@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <include file="Public:header" />
+    <style type="text/css">
+    .box-n-1200 .div960 {
+        float: right;
+        width: 940px;
+    }
+
+    .div460 {
+        float: left;
+        height: 370px;
+        width: 458px;
+        background-color: #FFFFFF;
+        margin-bottom: 20px;
+        background-image: url(images/20160623044610386.jpg);
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+
+    .title9 {
+        line-height: 48px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 35px;
+        font-size: 20px;
+        color: #D8050B;
+        font-family: "微软雅黑";
+    }
+
+    .d940 ul {
+        padding: 20px;
+    }
+
+    .d940 li {
+        font-size: 14px;
+        line-height: 40px;
+        border-bottom-width: 1px;
+        border-bottom-style: dotted;
+        border-bottom-color: #CCCCCC;
+    }
+
+    .title9 .dqwzyb {
+        font-family: "宋体";
+        font-size: 12px;
+        font-weight: normal;
+        float: right;
+        padding-right: 15px;
+    }
+
+    .d940 {
+        width: 938px;
+        margin-bottom: 20px;
+        float: right;
+        background-color: #FFFFFF;
+        background-image: url(images/20160623044610386.jpg);
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+
+    -->
+    </style>
+    <title>投资者关系 - 国酒茅台-官网</title>
+</head>
+
+<body>
+    <div class="top">
+        <include file="Public:nav" />
+    </div>
+    <div class="box-ntop" style="background-image: url(images/20160119090736772.jpg);background-color: #76C0DE;"></div>
+    <div class="box-n-1200">
+        <div class="zuobian tyyj-gy">
+            <div class="list-title yuanjiao">投资者关系</div>
+            <ul>
+                <volist name="cate" id="v">
+                <li class="dangqian"><span class="iocyb">&gt;</span><a  <if condition="$v.type eq 1">href="__APP__/Home/Business/show/cid/{$v.id}"<else/>href="__APP__/Home/Business/relate/cid/{$v.id}"</if> >{$v.cname}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="youbian tyyj-gy" style="margin-bottom: 20px;">
+            <div class="y_title">
+                <h2>投资者关系</h2>
+                <p><a href="http://www.moutaichina.com">首页</a><span> &gt; </span><a href="http://www.moutaichina.com/touzi/">投资者关系</a> > </p>
+            </div>
+           <!--  <a href="http://2016.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=600519" target="_blank" title="进入查看茅台股票详细信息">
+                <div style="margin-bottom: 50px;margin-top: 30px;margin-right: 50px;margin-left:50px;">
+                    <div id="ess_ctr3136_HtmlModule_lblContent" class="Normal">
+                        <script src="/Public/home/js/99b6a753c89d464babe508048157a099.js"></script>
+                        <script src="/Public/home/js/e2e032ead054467dbd9c191662660fc2.js"></script>
+                        <script src="/Public/home/js/mtgp-sina.js"></script>
+                    </div>
+                </div>
+            </a> -->
+            <div class="clear"></div>
+        </div>
+        <div class="d940 tyyj-gy">
+            <div class="title9"><span class="dqwzyb">+ <a href="__APP__/Home/Business/show/cid/40">更多</a></span>公司公告</div>
+            <ul>
+               <volist name="shichang" id="v">
+                <li><span class="date">{$v.news_time|date="Y-m-d",###}  </span>&gt; <a href="__APP__/Home/Business/detail/id/{$v.id}">{$v.title}</a></li>
+                </volist>
+             
+            </ul>
+        </div>
+        <div class="d940 tyyj-gy">
+            <div class="title9"><span class="dqwzyb">+ <a href="__APP__/Home/Business/show/cid/41">更多</a></span>财务报告</div>
+            <ul>
+                 <volist name="shichang" id="v">
+                <li><span class="date">{$v.news_time|date="Y-m-d",###}  </span>&gt; <a href="__APP__/Home/Business/detail/id/{$v.id}">{$v.title}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="dibu">
+        <include file="Public:footer" />
+    </div>
+</body>
+
+</html>

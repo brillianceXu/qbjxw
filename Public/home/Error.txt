@@ -1,0 +1,4 @@
+﻿文件下载网址  =>  文件保存路径
+http://www.moutaichina.com/skin/icoRight.gif  =>  F:\仿站小工具 V3.0\www.moutaichina.com\images\icoright.gif
+http://www.moutaichina.com/skin/list-ioc.png  =>  F:\仿站小工具 V3.0\www.moutaichina.com\images\list-ioc.png
+http://www.moutaichina.com/skin/icoLeft.gif  =>  F:\仿站小工具 V3.0\www.moutaichina.com\images\icoleft.gif

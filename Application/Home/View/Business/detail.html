@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <include file="Public:header" />
+    <title>茅台集团喜获仁怀市纪念改革开放四十周年合唱比赛冠军 - 公司新闻 - 国酒茅台-官网</title>
+</head>
+
+<body>
+    <div class="top">
+        <include file="Public:nav" />
+    </div>
+    <div class="box-ntop" style="background-image: url(images/20160119090335319_1.jpg);background-color: #4D70B4"></div>
+    <div class="box-n-1200">
+        <div class="zuobian tyyj-gy">
+            <div class="list-title yuanjiao">合作者关系</div>
+            <ul>
+                <volist name="cate" id="v">
+                <li class="dangqian"><span class="iocyb">&gt;</span><a  <if condition="$v.type eq 1">href="__APP__/Home/Business/show/cid/{$v.id}"<else/>href="__APP__/Home/Business/relate/cid/{$v.id}"</if> >{$v.cname}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="youbian tyyj-gy" style="min-height:800px">
+            <div class="y_title">
+                <a href="http://www.moutaichina.com">首页</a><span> &gt; </span><a href="http://www.moutaichina.com/xinwen/">新闻资讯</a> > <a href="http://www.moutaichina.com/xinwen/xinwen/">公司新闻</a> >
+            </div>
+            <div class="wz-title">
+                <h1>{$mess.title} </h1>
+                <div style="font-size: 12px;line-height: 30px;text-align: center;margin-right: auto;margin-left: auto;"> 发布时间：{$mess.news_time|date="Y-m-d H:i:s",###} &nbsp;&nbsp; 来源：黔北酒乡网 &nbsp;&nbsp; </div>
+            </div>
+            <div class="wz-box">
+                {$mess.content}
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+    <div class="dibu">
+        <include file="Public:footer" />
+    </div>
+</body>
+
+</html>

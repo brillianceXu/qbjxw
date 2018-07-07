@@ -1,0 +1,76 @@
+<extend name="Public:base" />
+<block name="main">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 分类管理 </nav>
+     <div class="page-container">
+    <a class="btn btn-primary radius" data-title="添加" href="__APP__/Admin/Goods/category_add.html"><i class="Hui-iconfont">&#xe600;</i> 添加</a></div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg table-hover table-sort">
+            <thead>
+                <tr class="text-c">
+                    <th width="25">
+                        <input type="checkbox" name="" value="">
+                    </th>
+                    <th>ID</th>
+                    <th width="80">排序</th>
+                    <th>分类名称</th>
+                    <th>分类描述</th>
+                    <th>上级分类</th>
+                    <!-- <th>类型</th> -->
+                    <!-- <th>发布时间</th> -->
+                    <!-- <th>更新时间</th> -->
+                    <!-- <th>浏览次数</th> -->
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form method="post" action="__APP__/Admin/Goods/datadel" id="datadel_form">
+                    <volist name="category" id="v">
+                        <tr class="text-c">
+                            <td>
+                                <input type="checkbox" value="{$v.id}" name="del_ids[]">
+                            </td>
+                            <td>{$v.id}</td>
+                            <td>
+                                <input type="text" name="sort{$v.id}" class="input-text text-c" placeholder="{$v.sort}" onchange="do_sort({$v.id});" />
+                            </td>
+                            <td class="">{$v.cname}</td>
+                            <td>{$v.note }</td>
+                            <td>{$v.pname }</td>
+                            <td>修改 | 删除</td>
+                            <!-- <td>{$v.update_time}</td> -->
+                 
+                        </tr>
+                    </volist>
+                </form>
+            </tbody>
+        </table>
+    </div>
+    </div>
+   
+<script type="text/javascript">
+function active_del(id){
+	layer.confirm("确定要删除吗？",function(){
+		$.get("__APP__/Goods/del_cate",{id:id},function(msg){
+			if(msg == 200){
+				layer.msg('已删除!',{icon: 5,time:1000},function(){
+					window.location.reload();
+				});
+			}else{
+				layer.msg('删除失败!');
+			}
+		});
+	});
+	
+}
+function do_sort(id){
+	var sort = $("input[name=sort"+id+"]").val();
+	$.get("__APP__/Goods/done_sort",{id:id,sort:sort},function(msg){
+		if(msg == '200'){
+				location.reload();
+		}else{
+			layer.msg('排序出现错误!',{icon: 5,time:1000});
+		}
+	})
+}
+</script>
+</block>

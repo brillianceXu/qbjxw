@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <include file="Public:header"/>
+</head>
+
+<body>
+    <div class="top">
+        <include file="Public:nav"/>
+    </div>
+    <div class="box-ntop" style="background-image: url(images/20151231030339132.jpg);background-color: #2293FD"></div>
+    <div class="box-n-1200">
+        <div class="zuobian tyyj-gy">
+            <div class="list-title yuanjiao">企业概况</div>
+            <ul>
+                <volist name="cate" id="v">
+                <li class="dangqian"><span class="iocyb">&gt;</span><a <if condition="$v.type eq 1">href="__APP__/Home/About/index/cid/{$v.id}"<else/>href="__APP__/Home/About/about/cid/{$v.id}"</if> >{$v.cname}</a></li>
+                </volist>
+                <!-- <li><span class="iocyb">&gt;</span><a href="http://www.moutaichina.com/gaikuang/ldjj/">领导介绍</a></li>
+                <li><span class="iocyb">&gt;</span><a href="http://www.moutaichina.com/gaikuang/jiagou/">公司架构</a></li>
+                <li><span class="iocyb">&gt;</span><a href="http://www.moutaichina.com/gaikuang/wenhua/">文化理念</a></li>
+                <li><span class="iocyb">&gt;</span><a href="http://www.moutaichina.com/gaikuang/rongyu/">茅台荣誉</a></li>
+                <li><span class="iocyb">&gt;</span><a href="http://www.moutaichina.com/gaikuang/jidi/">生产基地</a></li>
+                <li><span class="iocyb">&gt;</span><a href="http://www.moutaichina.com/gaikuang/lianxi/">联系我们</a></li>
+                <li><span class="iocyb">&gt;</span><a href="http://www.moutaichina.com/gaikuang/fazhanguihua/">发展规划</a></li> -->
+            </ul>
+        </div>
+        <div class="youbian tyyj-gy" style="min-height:600px">
+            <div class="y_title">
+                <a href="http://www.moutaichina.com">首页</a><span> &gt; </span><a href="http://www.moutaichina.com/gaikuang/">企业概况</a> > <a href="http://www.moutaichina.com/gaikuang/jianjie/">公司简介</a> >
+            </div>
+            <div class="wz-title">
+                <h1>{$mess.title}</h1>
+            </div>
+            <div class="wz-box">
+                {$mess.content}
+                <br />
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+   
+    <div class="dibu">
+        <include file="Public:footer"/>
+    </div>
+</body>
+
+</html>

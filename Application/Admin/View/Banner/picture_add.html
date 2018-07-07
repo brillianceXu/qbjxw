@@ -1,0 +1,94 @@
+<extend name="Public:base"/>
+<block name="main">
+<div class="page-container">
+    <style type="text/css">
+        #form-article-add label{
+            width: 10%;
+        }
+    </style>
+	<form action="__APP__/Admin/Banner/picture_add/id/{$info.id}.html" method="post" class="form form-horizontal" id="form-article-add" enctype="multipart/form-data">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片标题：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$info.name}" placeholder="请输入标题" name="pname" >
+			</div>
+		</div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
+            <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+                <select name="cid" class="select">
+                    <!-- <option value="0">选择分类</option> -->
+                <volist name="cate" id="v">
+                    <option value="{$v.id}" <if condition="$mes.cid eq $v['id']">selected="selected"</if>>{$v.cname}</option>
+                </volist>
+                </select>
+                </span> </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">链接地址：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{$info.link}" placeholder="请输入包含http的完整网址" id="" name="link">
+            </div>
+        </div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+                <div id="uploader" class="wu-example">
+                    <!--用来存放文件信息-->
+                    <div id="thelist" class="uploader-list"></div>
+                    <div class="btns">
+
+                        <input type="file" name="route" id="doc" style="display: none;" onchange="preview(this);" value="">
+
+                        <button id="ctlBtn" class="btn btn-default radius" type="button" onclick="$('#doc').click();">开始上传</button>
+                        <div id="dd" style=" width:100%;"></div>
+                        <if condition="$info.route neq ''">
+                        <div id="preview" style="display: block;padding-top: 12px;"><img height="100" src="{$info.route}"/></div> 
+                        <else/>
+                        <div id="preview" style="display: none;padding-top: 12px;"></div> 
+                        </if> 
+                    </div>
+                </div>
+				
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<!-- <button onClick="article_save_submit();" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button> -->	
+				<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+				<button onClick="remove_input();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+			</div>
+		</div>
+	</form>
+</div>
+<!-- <script type="text/javascript" src="__PUBLIC__/admin/lib/jquery/1.9.1/jquery.min.js"></script>  -->
+<script type="text/javascript">
+    function article_save(){
+        var title=$("input[name=name]").val();
+        // var image=$("input[name='image']").val();
+        // alert(name);
+        if(title == ''){
+            layer.msg('请输入图片标题！');
+            $("input[name=name]").focus();
+            return false;
+        }
+        // if(image == '')
+        // {
+        //     alert('请选择图片！');
+        //     $("input[name=image]").focus();
+        //     return false;
+        // }
+        $("#form-article-add").submit();
+    }
+    function remove_input()
+    {
+        window.history.back();
+        // window.location.href=history.go(-1);
+    }
+    function upload_one()
+    {
+        $("input[name='route']").click();
+    }
+</script>
+
+</block>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>遵义市软件园</title>
+    <link rel="stylesheet" href="/Public/mobile/style/frozen.css" type="text/css" />
+    <link rel="stylesheet" href="/Public/mobile/style/css.css" type="text/css" />
+    <link type="text/css" href="/Public/mobile/style/font-awesome.min.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="/Public/mobile/js/jquery-3.1.1.min.js"></script> 
+    <script type="text/javascript" src="/Public/mobile/js/xiala.js"></script><!--下拉菜单-->
+    <script src="/Public/mobile/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="/Public/mobile/js/main.js"></script> 
+    <style type="text/css">
+        .mgs_about p img {
+            width: 100% !important;
+            height: auto !important;
+        }
+        .in_title1 li {
+            font-size: 12px;
+            width: 16.555555555%;
+            z-index: 1000000!important;
+        }
+        .in_new,.in_new .in_title ,.in_new .in_title  a {
+            z-index: 1000000!important;
+        }
+    </style>
+</head>
+
+<body style="background-color:#fff;">
+<include file="Public:menu"/>
+
+
+
+<div class="two_xiala">
+    <ul id="accordion1" class="accordion1">
+        <li>
+            <div class="link">新闻中心</div>
+           <!--  <ul class="submenu" style="display: ;">
+                <li><a href="#">企业简介</a></li>
+                <li><a href="#">企业简介</a></li>
+                <li><a href="#">企业简介</a></li>
+                <li><a href="#">企业简介</a></li>
+            </ul> -->
+        </li>
+    </ul>
+
+</div>
+<!-- two_xiala end -->
+
+<div class="mgs_about w96">
+    <h1 style="font-size: 16px;text-align: center;margin-bottom: 10px;">{$news.title}</h1>
+     <hr style="margin-top: 5px;" />
+    <h4 style="text-align: center;color: black;font-size: 14px;margin-bottom: 10px;">来源:{$news.source} &nbsp;&nbsp;作者:{$news.author} &nbsp;&nbsp;日期:{$news.news_time}</h4>
+    {$news.content}
+</div>
+
+<div class="clear"></div>
+<div class="fixed_bottom w100 clearfix" style="background: #bbb">
+    <ul class="in_title1 w96 clearfix">
+        <volist name="cate[1]['child']" id="v" >
+        <li ><a href="__APP__/News/index/cid/{$v.id}.html">{$v.cname}</a></li>
+        </volist>
+        <li><a href="__APP__/News/video.html">视频新闻</a></li>
+        
+    </ul>
+</div>
+<include file="Public:footer"/>
+</body>
+</html>

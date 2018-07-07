@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <title>公司新闻 - 国酒茅台-官网</title>
+    <include file="Public:header" />
+</head>
+
+<body>
+    <div class="top">
+        <include file="Public:nav" />
+    </div>
+    <div class="box-ntop" style="background-image: url(images/20160119090335319.jpg);background-color: #4D70B4;"></div>
+    <div class="box-n-1200">
+        <div class="zuobian tyyj-gy">
+            <div class="list-title yuanjiao">新闻资讯</div>
+            <ul>
+                <volist name="cate" id="v">
+                <li class="dangqian"><span class="iocyb">&gt;</span><a href="__APP__/Home/News/news/cid/{$v.id}" >{$v.cname}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="youbian tyyj-gy">
+            <div class="y_title">
+                <h2>公司新闻</h2>
+                <p><a href="http://www.moutaichina.com">首页</a><span> &gt; </span><a href="http://www.moutaichina.com/xinwen/">新闻资讯</a> > <a href="http://www.moutaichina.com/xinwen/xinwen/">公司新闻</a> > </p>
+            </div>
+            <ul class="list-nw" style="min-height:500px;">
+            	<volist name="mess" id="v">
+                <li><span class="date">{$v.news_time|date="Y-m-d",###} </span><a href="__APP__/Home/News/detail/id/{$v.id}">{$v.title} </a></li>
+            	</volist>
+               
+            </ul>
+            <div id="pages"><a class="a1">2359条</a> <a href="/xinwen/xinwen/index.html" class="a1">上一页</a> <span>1</span> <a href="/xinwen/xinwen/2.html">2</a> <a href="/xinwen/xinwen/3.html">3</a> <a href="/xinwen/xinwen/4.html">4</a> <a href="/xinwen/xinwen/5.html">5</a> <a href="/xinwen/xinwen/6.html">6</a> <a href="/xinwen/xinwen/7.html">7</a> <a href="/xinwen/xinwen/8.html">8</a> <a href="/xinwen/xinwen/9.html">9</a> <a href="/xinwen/xinwen/10.html">10</a> ..<a href="/xinwen/xinwen/79.html">79</a> <a href="/xinwen/xinwen/2.html" class="a1">下一页</a></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+    <div class="dibu">
+        <include file="Public:footer" />
+    </div>
+</body>
+
+</html>

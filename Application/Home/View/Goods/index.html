@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <include file="Public:header" />
+</head>
+
+<body>
+    <div class="top">
+        <include file="Public:nav" />
+    </div>
+    <div class="box-ntop" style="background-image: url(images/20160101122150780.jpg);background-color: #5CBFDD;"></div>
+    <div class="cpfl tyyj-gy">
+        <div class="wrap">
+            <div class="daohang"> <span></span><a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/Goods/index">产品中心</a> > {$cname}</div>
+        </div>
+        <div class="box">
+            <div class="list_paixu">
+                <volist name="cate" id="v">
+                <dl>
+                    <dt>{$v.cname}</dt>
+                    <dd>
+                        <volist name="v.child" id="vv">
+                        <a href="__APP__/Home/Goods/index/cid/{$vv.id}" <if condition="$vv.id eq $cid">style="color:red"</if>>{$vv.cname}</a>
+                        </volist>
+                       
+                    </dd>
+                </dl>
+                </volist>
+               
+            </div>
+        </div>
+    </div>
+    <div class="cpbox">
+        <volist name="mess" id="v">
+        <div class="cpzx-img tyyj-gy">
+            <a href="__APP__/Home/Goods/detail/id/{$v.id}"><img src="{$v.picture}" title="{$v.name}" width="203" height="203" /></a>
+            <p><a href="__APP__/Home/Goods/detail/id/{$v.id}">{$v.name}</a></p>
+        </div>
+        </volist>
+        
+        <div class="clear"></div>
+        <div id="pages"><a class="a1">178条</a> <a href="/chanpin/index.html" class="a1">上一页</a> <span>1</span> <a href="/chanpin/2.html">2</a> <a href="/chanpin/3.html">3</a> <a href="/chanpin/4.html">4</a> <a href="/chanpin/5.html">5</a> <a href="/chanpin/6.html">6</a> <a href="/chanpin/7.html">7</a> <a href="/chanpin/8.html">8</a> <a href="/chanpin/9.html">9</a> <a href="/chanpin/2.html" class="a1">下一页</a></div>
+        <div class="clear"></div>
+    </div>
+
+    
+    <div class="dibu">
+        <include file="Public:footer"/>
+    </div>
+</body>
+
+</html>

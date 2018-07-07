@@ -1,0 +1,135 @@
+<extend name="Public:base" />
+<block name="main">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理</nav>
+    <div class="page-container">
+        <form action="__APP__/Admin/Goods/index{$str}" method="get">
+            <div class="text-c">
+                <span class="select-box inline">
+                <select name="cid" class="select">
+                    <option value="0">全部分类</option>
+                    <volist name="cate" id="v">
+                    <option value="{$v.id}" <if condition="$cid eq $v['id']" >selected="selected"</if>>{$v.cname}</option>
+                    </volist>
+                    <!-- <option value="2">分类二</option> -->
+                </select>
+                </span>
+                <input type="text" name="keywords" id="" placeholder="{$keywords|default=" 搜索标题或者内容 "}" style="width:250px" class="input-text">
+                <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+                <button name="" id="" class="btn btn-primary" type="button" onclick="window.location.href='__APP__/Admin/Goods/goods_add.html';"><i class="Hui-iconfont">&#xe600;</i> 添加</button>
+            </div>
+        </form>
+        <!-- <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> -->
+        <!-- <a class="btn btn-primary radius" data-title="添加资讯" href="__APP__/Admin/Invest/invest_add.html"><i class="Hui-iconfont"></i> 添加</a></span> -->
+        <!-- <a class="btn btn-secondary radius" data-title="视频新闻" href="__APP__/Admin/Content/video.html"><i class="Hui-iconfont">&#xe616;</i> 视频新闻</a></span> -->
+        <span class="r"> &nbsp; &nbsp;共：<strong>{$totalPage}</strong> 页 &nbsp; &nbsp;共有数据：<strong>{$article_count}</strong> 条</span>
+    </div>
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row">
+                <volist name="article" id="v">
+                <div class="col-md-3" style="padding: 15px;">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="{$v.picture}" style="width:100%;height: auto;" />
+                        <div class="caption">
+                            <h3>
+                                <a href="__APP__/Admin/Goods/show.html">{$v.name}</a>
+                            </h3>
+                            <p>
+                                {$v.summary}
+                            </p>
+                            <p>
+                                 <a class="btn btn-primary" href="#">上架</a> <a class="btn" href="#">相册</a> <a class="btn" href="#">详情……</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </volist>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20" style="line-height: 35px;">
+        <style type="text/css">
+        .paginate_button {
+            border: 1px solid #ccc;
+            color: #666;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            height: 26px;
+            line-height: 26px;
+            margin: 0 0 6px 6px;
+            padding: 0 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .current {
+            background: #5a98de none repeat scroll 0 0;
+            color: #fff;
+        }
+        </style>
+        <span class="r">
+		<div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+		<if condition="$page eq 1">
+		<else/>
+		<a href="__APP__/Admin/Goods/index{$str}/page/1" class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous">首页</a>
+		<a href="__APP__/Admin/Goods/index{$str}/page/{$page-1}" class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous">上一页</a>
+		</if>
+		<span>
+			<a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">{$page}</a>
+		</span>
+        <if condition="$page eq $totalPage">
+            <else/>
+            <a href="__APP__/Admin/Goods/index{$str}/page/{$page+1}" class="paginate_button next disabled" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" id="DataTables_Table_0_next">下一页</a>
+            <a href="__APP__/Admin/Goods/index{$str}/page/{$totalPage}" class="paginate_button next disabled" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" id="DataTables_Table_0_next">尾页</a>
+        </if>
+    </div>
+    </span>
+    </div>
+    </div>
+    <script type="text/javascript">
+    function datadel() {
+        $("#datadel_form").submit();
+    }
+
+    function article_del(id) {
+        layer.confirm("确定要删除吗？", function() {
+            $.get("__APP__/Admin/Content/del_article", {
+                id: id
+            }, function(msg) {
+                if (msg == 200) {
+                    layer.msg('已删除!', {
+                        icon: 5,
+                        time: 1000
+                    }, function() {
+                        window.location.reload();
+                    });
+                } else {
+                    layer.msg('删除失败!');
+                }
+            });
+        });
+    }
+  
+
+
+    function do_sort(id) {
+        var sort = $("input[name=sort" + id + "]").val();
+        $.get("__APP__/Admin/Content/done_sort", {
+            id: id,
+            sort: sort
+        }, function(msg) {
+            if (msg == '200') {
+                location.reload();
+            } else {
+                layer.msg('排序出现错误!', {
+                    icon: 5,
+                    time: 1000
+                });
+            }
+        })
+    }
+    </script>
+</block>

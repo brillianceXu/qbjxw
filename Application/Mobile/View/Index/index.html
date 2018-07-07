@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>黔北酒乡网</title>
+    <link rel="stylesheet" href="/Public/mobile/style/frozen.css" type="text/css" />
+    <link rel="stylesheet" href="/Public/mobile/style/css.css" type="text/css" />
+    <link type="text/css" href="/Public/mobile/style/font-awesome.min.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="/Public/mobile/js/jquery-3.1.1.min.js"></script> 
+    <script type="text/javascript" src="/Public/mobile/js/xiala.js"></script><!--下拉菜单-->
+    <script src="/Public/mobile/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="/Public/mobile/js/main.js"></script> 
+    <style type="text/css">
+        footer{
+            padding: 10px;
+        }
+        .in_title li{
+            width: 25%;
+        }
+        .in_title1 li{
+            font-size: 12px;
+            width: 50%;
+            z-index: 1000000!important;
+        }
+    </style>
+</head>
+
+<body style="background-color:#fff;">
+<include file="Public:menu"/>
+
+<div id="focus" class="focus">
+    <div class="hd">
+        <ul>
+            <li class="on"></li>
+            <li class=""></li>
+            <li class=""></li>
+        </ul>
+    </div>
+    <div class="bd">
+        <div class="tempWrap">
+            <ul>
+                <volist name="banner" id="v">
+                <li>
+                    <a href="{$v['link']}"><img hh-wh="0.55" src="{$v['route']}"></a>
+                </li>
+                </volist>
+                
+         </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    TouchSlide({
+        slideCell:"#focus",
+        titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell:".bd ul",
+        effect:"left",
+        autoPlay:true,//自动播放
+        autoPage:true, //自动分页
+        switchLoad:"_src" //切换加载，真实图片路径为"_src"
+    });
+</script>
+<!-- banner end -->
+
+<div class=" w100">
+    <h2 style="text-align: center;padding: 10px 0;"><marquee>
+        <volist name="new_news" key="k" id="v">
+            <a href="__APP__/News/detail/id/{$v['id']}" style="color: red;text-decoration: underline;">{$v['title']}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </volist>
+        </marquee></h2>
+</div>
+
+
+<!-- <div style="display: inline-block;position:fixed;float: right;top: 100px;right: 0;width: 80px;z-index: 50;padding: 0px 0;">
+    <h1 style="text-align: center;background: #0000ff80;height: 50px;line-height: 25px;padding: 10px 0px;"><a href="__APP__/Park/apply.html" style="color: white;font-weight: bold;"><i class="fa fa-gg fa-2x"></i></i><br/>我要投资</a></h1>
+    <h1 style="text-align: center;background: #0080008a;height: 50px;line-height: 25px;padding: 10px 0px;"><a href="__APP__/Park/build.html" style="color: white;font-weight: bold;"><i class="fa fa-product-hunt fa-2x"></i><br/>我要创业</a></h1>
+</div> -->
+<div class="in_enter w96 clearfix">
+    <dl class="bg1">
+        <dt><a href="__APP__/Park/index/cid/{$cate[2]['child'][2]['id']}"><img src="/Public/mobile/images/yq1.png" /></a></dt>
+        <dd>
+            <a href="__APP__/Park/index/cid/{$cate[2]['child'][2]['id']}">台酿盛宴</a>
+        </dd>
+    </dl>
+    <dl class="bg2">
+        <dt><a href="__APP__/Park/index/cid/{$cate[2]['child'][0]['id']}"><img src="/Public/mobile/images/yq2.jpg" /></a></dt>
+        <dd>
+            <a href="__APP__/Park/index/cid/{$cate[2]['child'][0]['id']}">原浆酒</a>
+        </dd>
+    </dl>
+    <dl class="bg4">
+        <dt><a href="__APP__/Park/index/cid/{$cate[2]['child'][1]['id']}"><img src="/Public/mobile/images/yq3.jpg" /></a></dt>
+        <dd>
+            <a href="__APP__/Park/index/cid/{$cate[2]['child'][1]['id']}">定制系列</a>
+        </dd>
+    </dl>
+</div>
+<div class="in_new w100">
+
+    <ul class="in_title w96 clearfix">  
+        <li><a>行业资讯</a></li>
+        <li><a>公司动态</a></li>
+        <li><a>通知公示</a></li>
+        <li><a>招聘启示</a></li>
+        
+    </ul>
+    <div class="in_content w100">
+        <div>
+            <ul class="in_con">
+                <volist name="dongtai" id="v">
+                <li><a href="__APP__/News/detail/id/{$v.id}.html">{$v.title|mb_substr=0,18,'utf-8'}...</a><span style="float: right;">[{$v.news_time}]</span></li>
+                </volist>
+            </ul>
+        </div>
+        <div>
+            <ul class="in_con">
+                <volist name="zhuanti" id="v">
+                <li><a href="__APP__/News/detail/id/{$v.id}.html">{$v.title|mb_substr=0,18,'utf-8'}...</a><span style="float: right;">[{$v.news_time}]</span></li>
+                </volist>
+            </ul>
+        </div>
+        <div>
+            <ul class="in_con">
+                <volist name="baodao" id="v">
+                <li><a href="__APP__/News/detail/id/{$v.id}.html">{$v.title|mb_substr=0,18,'utf-8'}...</a><span style="float: right;">[{$v.news_time}]</span></li>
+                </volist>
+            </ul>
+        </div>
+        <div>
+            <ul class="in_con">
+                <volist name="hangye" id="v">
+                <li><a href="__APP__/News/detail/id/{$v.id}.html">{$v.title|mb_substr=0,18,'utf-8'}...</a><span style="float: right;">[{$v.news_time}]</span></li>
+                </volist>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+<!-- in_enter end -->
+
+<div class="clear"></div>
+<include file="Public:footer"/>
+</body>
+</html>

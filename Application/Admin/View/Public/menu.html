@@ -1,0 +1,62 @@
+<aside class="Hui-aside">
+    <input runat="server" id="divScrollValue" type="hidden" value="" />
+    <div class="menu_dropdown bk_2">
+        <dl id="menu-article">
+            <dt <if condition="$controller_name eq 'Content'">class="selected" style="background:#5A98DE;color:white;"</if>><i class="Hui-iconfont">&#xe616;</i> 内容管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd <if condition="$controller_name eq 'Content'">style="display:block;"</if>>
+                <ul>
+                    <li ><a href="__APP__/Admin/Content/index/pid/1.html" data-title="企业概况" <if condition="($controller_name eq 'Content') and ($action_name eq 'about')">style="font-weight:bold;font-style: italic;"</if>>企业概况</a></li>
+                    <li ><a href="__APP__/Admin/Content/index/pid/3.html" data-title="新闻资讯" <if condition="($controller_name eq 'Content') and ($action_name eq 'index')">style="font-weight:bold;font-style: italic;"</if>>新闻资讯</a></li>
+                    <li ><a href="__APP__/Admin/Content/index/pid/4.html" data-title="服务中心" <if condition="($controller_name eq 'Content') and ($action_name eq 'culture')">style="font-weight:bold;font-style: italic;"</if>>服务中心</a></li>
+                    
+                    <li ><a href="__APP__/Admin/Content/index/pid/5.html" data-title="合作者关系" <if condition="($controller_name eq 'Content') and ($action_name eq 'business')">style="font-weight:bold;font-style: italic;"</if>>合作者关系</a></li>
+                    <li ><a href="__APP__/Admin/Content/consult.html" data-title="在线咨询" <if condition="($controller_name eq 'Content') and ($action_name eq 'consult')">style="font-weight:bold;font-style: italic;"</if>>在线咨询</a></li>
+                    <li><a href="__APP__/Admin/Category/category_list.html" data-title="分类" href="javascript:void(0)" <if condition="($controller_name eq 'Content') and ($action_name eq 'category_list')">style="font-weight:bold;font-style: italic;"</if>>分类栏目</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-System">
+            <dt  <if condition="$controller_name eq 'Goods'">class="selected" style="background:#5A98DE;color:white;"</if>><i class="Hui-iconfont">&#xe620;</i> 产品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd <if condition="$controller_name eq 'Goods'">style="display:block;"</if>>
+                <ul>
+                    <li><a href="__APP__/Admin/Goods/index.html" data-title="产品列表" href="javascript:void(0)" <if condition="($controller_name eq 'Goods') and ($action_name eq 'index')">style="font-weight:bold;font-style: italic;"</if>>产品列表</a></li>
+                    <li><a href="__APP__/Admin/Goods/category_list.html" data-title="产品分类" href="javascript:void(0)" <if condition="($controller_name eq 'Goods') and ($action_name eq 'category_list')">style="font-weight:bold;font-style: italic;"</if>>产品分类</a></li>
+                    
+                </ul>
+            </dd>
+        </dl>   
+        <dl id="menu-System">
+            <dt  <if condition="$controller_name eq 'Banner'">class="selected" style="background:#5A98DE;color:white;"</if>><i class="Hui-iconfont">&#xe612;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd <if condition="$controller_name eq 'Banner'">style="display:block;"</if>>
+                <ul>
+                    <li><a href="__APP__/Admin/Banner/index.html" data-title="Banner" href="javascript:void(0)" <if condition="($controller_name eq 'Banner') and ($action_name eq 'index')">style="font-weight:bold;font-style: italic;"</if>>图片列表</a></li>
+                    <!-- <li><a href="__APP__/Admin/Banner/company.html" data-title="合作企业" href="javascript:void(0)" <if condition="($controller_name eq 'Banner') and ($action_name eq 'company')">style="font-weight:bold;font-style: italic;"</if>>合作企业</a></li> -->
+					<!-- <li><a href="__APP__/Admin/Banner/honor.html" data-title="荣誉资质" href="javascript:void(0)" <if condition="($controller_name eq 'Banner') and ($action_name eq 'honor')">style="font-weight:bold;font-style: italic;"</if>>荣誉资质</a></li> -->
+                </ul>
+            </dd>
+        </dl>
+        
+        <if condition="$Think.session.usermsg.roleid eq '2'">
+        <else/>
+        <dl id="menu-System">
+            <dt <if condition="$controller_name eq 'Manager'">class="selected" style="background:#5A98DE;color:white;"</if>><i class="Hui-iconfont">&#xe62d;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd <if condition="$controller_name eq 'Manager'">style="display:block;"</if>>
+                <ul>
+                    <li><a href="__APP__/Admin/Manager/index" data-title="管理员" href="javascript:void(0)" <if condition="($controller_name eq 'Manager') and ($action_name eq 'index')">style="font-weight:bold;font-style: italic;"</if>>管理员</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-system">
+            <dt <if condition="$controller_name eq 'System'">class="selected" style="background:#5A98DE;color:white;"</if>><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd <if condition="$controller_name eq 'System'">style="display:block;"</if>>
+                <ul>
+                    <li><a href="__APP__/Admin/System/index" data-title="系统设置" href="javascript:void(0)" <if condition="($controller_name eq 'System') and ($action_name eq 'index')">style="font-weight:bold;font-style: italic;"</if>>系统设置</a></li>
+                    <li><a href="__APP__/Admin/System/link.html" data-title="友情链接" href="javascript:void(0)" <if condition="($controller_name eq 'System') and ($action_name eq 'link')">style="font-weight:bold;font-style: italic;"</if>>友情链接</a></li>
+                    <li><a href="__APP__/Admin/System/system_log.html" data-title="系统日志" href="javascript:void(0)" <if condition="($controller_name eq 'System') and ($action_name eq 'system_log')">style="font-weight:bold;font-style: italic;"</if>>系统日志</a></li>
+                    <li><a href="__APP__/Admin/System/views.html" data-title="系统日志" href="javascript:void(0)" <if condition="($controller_name eq 'System') and ($action_name eq 'views')">style="font-weight:bold;font-style: italic;"</if>>访问记录</a></li>
+                </ul>
+            </dd>
+        </dl>
+        </if>
+    </div>
+</aside>

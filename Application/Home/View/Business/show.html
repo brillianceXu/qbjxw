@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <title>财务报告 - 国酒茅台-官网</title>
+    <include file="Public:header" />
+</head>
+
+<body>
+    <div class="top">
+        <include file="Public:nav" />
+    </div>
+    <div class="box-ntop" style="background-image: url(images/20160119090736772.jpg);background-color: #76C0DE;"></div>
+    <div class="box-n-1200">
+        <div class="zuobian tyyj-gy">
+            <div class="list-title yuanjiao">投资者关系</div>
+            <ul>
+                <volist name="cate" id="v">
+                <li class="dangqian"><span class="iocyb">&gt;</span><a  <if condition="$v.type eq 1">href="__APP__/Home/Business/show/cid/{$v.id}"<else/>href="__APP__/Home/Business/relate/cid/{$v.id}"</if> >{$v.cname}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="youbian tyyj-gy">
+            <div class="y_title">
+                <h2>财务报告</h2>
+                <p><a href="http://www.moutaichina.com">首页</a><span> &gt; </span><a href="http://www.moutaichina.com/touzi/">投资者关系</a> > <a href="http://www.moutaichina.com/touzi/caiwubaogao/">财务报告</a> > </p>
+            </div>
+            <ul class="list-nw" style="min-height:500px;">
+                <volist name="mess" id="v">
+                <li><span class="date">{$v.news_time|date="Y-m-d",###} </span><a href="__APP__/Home/Business/detail/id/{$v.id}">{$v.title} </a></li>
+                </volist>
+            </ul>
+            <div id="pages"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="dibu-ioc"><a href="http://www.gzaic315.gov.cn/ei/Ei!certificate.action?id=4028808a3f22cd16013f26ee61b00005" target="_blank"><img src="picture/20160729031501416_1.jpg" width="1200" height="74" border="0" usemap="#Map" /></a>
+        <map name="Map">
+            <area shape="rect" coords="1007,6,1172,69" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=52038202001008" target="_blank">
+            <area shape="rect" coords="25,12,189,67" href="/uploadfile/2016/0607/20160607033555944.jpg" target="_blank">
+            <area shape="rect" coords="332,13,534,67" href="http://www.gzaic315.gov.cn/ei/Ei!certificate.action?id=4028808a3f22cd16013f26ee61b00005" target="_blank">
+        </map>
+    </div>
+    <div class="dibu">
+        <include file="Public:footer" />
+    </div>
+</body>
+
+</html>

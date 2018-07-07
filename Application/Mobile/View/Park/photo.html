@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>遵义市软件园</title>
+    <link rel="stylesheet" href="/Public/mobile/style/frozen.css" type="text/css" />
+    <link rel="stylesheet" href="/Public/mobile/style/css.css" type="text/css" />
+    <link type="text/css" href="/Public/mobile/style/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Public/fancybox/source/jquery.fancybox.css">
+
+    <script type="text/javascript" src="/Public/mobile/js/jquery-3.1.1.min.js"></script> 
+    <script type="text/javascript" src="/Public/mobile/js/xiala.js"></script><!--下拉菜单-->
+    <script src="/Public/mobile/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="/Public/mobile/js/main.js"></script> 
+    <style type="text/css">
+        .mgs_about p img {
+            width: 100% !important;
+            height: auto !important;
+        }
+        .in_title li ,.in_title1 li ,.in_title2 li {
+            font-size: 12px;
+            width: 33.333333%;
+            z-index: 1000000!important;
+        }
+        .in_new,.in_new .in_title ,.in_new .in_title  a {
+            z-index: 1000000!important;
+        }
+        table td{
+            padding: 10px 0px;
+        }
+    </style>
+</head>
+
+<body style="background-color:#fff;">
+<include file="Public:menu"/>
+
+
+
+<div class="two_xiala">
+    <ul id="accordion1" class="accordion1">
+        <li>
+            <div class="link">{$cname}</div>
+        </li>
+    </ul>
+
+</div>
+<!-- two_xiala end -->
+
+<div class="mgs_leader">
+
+    <div class="mgs_leader_con clearfix" >
+        <empty name="mess">
+            <h2 style="text-align: center;margin: 10px 0">没有图片</h2>
+        </empty>
+        <volist name="mess" id="v">
+        <dl class=" tc fl">
+            <dt>
+                
+                <a class="fancybox"  data-fancybox-group="gallery" href="{$v.route}" title="{$v.name}"><img src="{$v.route}" style="height: 100px;" alt="{$v.name}" /></a>
+            </dt>
+        </dl>
+        </volist>
+    
+        </dl>
+    </div>
+</div>
+
+<div class="clear"></div>
+<div class="fixed_bottom w100 clearfix" style="background: #bbb">
+    <ul class="in_title2 w96 clearfix">
+        <volist name="cate[2]['child']" id="v" >
+        <li <if condition="$v.id eq $cid">class="current"</if> ><a href="__APP__/Park/photo/cid/{$v.id}.html">{$v.cname}</a></li>
+        </volist>
+        <!-- <li><a href="__APP__/News/video.html">视频新闻</a></li> -->
+        
+    </ul>
+</div>
+<include file="Public:footer"/>
+<script src="/Public/mobile/js/jquery-3.1.1.min.js"></script>
+<script src="/Public/mobile/js/jquery.min.js"></script>
+<script src="/Public/fancybox/source/jquery.fancybox.pack.js"></script>
+<script>
+    // $("#J_carousel").carousel();
+    $(".fancybox").fancybox()
+</script>
+</body>
+</html>
