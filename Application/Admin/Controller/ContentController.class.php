@@ -179,8 +179,7 @@ class ContentController extends BaseController {
       $this->assign("pageArr",$pageArr);
       $this->assign("page",$page);
       $this->assign("str",$str);
-      $this->assign("pid",$pid);
-      $this->assign("cid",$cid);
+      $this->assign("status",$status);
       $this->assign("keywords",$keywords);
       $this->assign("totalPage",$totalPage);
       $this->assign("pageSize",$pageSize);
