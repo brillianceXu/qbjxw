@@ -194,7 +194,7 @@ class ContentController extends BaseController {
       $type=I("type");
       $con['status']=1;
       $con['is_recommend']=1;
-      $con['cid']=59;
+      // $con['cid']=59;
       $con['type']=$type;
       if($value == 1){
         $num=$model->where($con)->count();
