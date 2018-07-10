@@ -33,7 +33,11 @@ class NewsController extends BaseController {
         $con['cid']=30;
         $hangye=$model->where($con)->limit("0,6")->select();
 
+        $cond['status']=1;
+        $cond['cid']=46;
+        $image=M("image")->where()->select();
 
+        $this->assign("image",$image);
     	$this->assign("cname",$cname);
     	$this->assign("cid",$cid);
     	$this->assign("page",$page);

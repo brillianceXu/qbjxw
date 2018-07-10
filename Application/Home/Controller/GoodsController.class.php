@@ -12,8 +12,6 @@ class GoodsController extends BaseController {
             $child=$Cmodel->where("pid=".$v['id'])->select();
             $cate[$k]['child']=$child;
         }
-        // $cate=$cate['child'];
-        // print_r($cate);exit;
     	$cid=I("cid");
 
     	// 
@@ -61,10 +59,15 @@ class GoodsController extends BaseController {
     		
 
     	$mess=$model->where($where)->find();
-    	$cid=$mess['cid'];
+        $cid=$mess['cid'];
+        $cond['cid']=$id;
+        $cond['status']=2;
+        $images=M("image")->where($cond)->select();
+    	
     	// $cname=$Cmodel->where("id=".$cid)->getField("cname");
 
-    	// print_r($cate);exit;
+    	// print_r($images);exit;
+        $this->assign("images",$images);
     	$this->assign("cid",$cid);
     	// $this->assign("cname",$cname);
     	$this->assign("cate",$cate);

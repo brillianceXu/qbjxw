@@ -23,11 +23,19 @@ class BannerController extends BaseController {
       $Cmodel=M("category");
       // $type=$_GET['type'];
       $model=M("image");
+
+      if($id){
+        $info=$model->where("id=".$id)->find();
+      }
       if($_POST)
       {
         $pictures=$_FILES['route'];
         if($pictures['name']['0'] != '')
         {
+          $oldroute=$info['route'];
+          if($oldroute){
+            unlink($_SERVER['DOCUMENT_ROOT'].$oldroute);
+          }
           $image=$this->upload_one($pictures);
           $data['route']=$image;
         }
@@ -38,17 +46,13 @@ class BannerController extends BaseController {
 
         $res=$model->where("id = ".$id)->save($data);
         if($res){
-          $this->add_log("添加图片",1,"成功新增图片");
+          $this->add_log("修改图片",1,"成功修改图片");
          $this->redirect("Banner/index");
         }else{
-          $this->error("添加图片失败");
+          $this->error("修改图片失败");
         }
       }else
       {
-        if($id){
-          $info=$model->where("id=".$id)->find();
-        }
-        
         $cate=$Cmodel->where("pid=".$pid." and status=3")->select();
         $this->assign("cate",$cate);
         $this->assign("info",$info);

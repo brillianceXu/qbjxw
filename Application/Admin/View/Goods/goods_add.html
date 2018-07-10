@@ -21,7 +21,7 @@
 					<volist name="cate" id="v">
 					<option value="{$v.id}" <if condition="$mes.cid eq $v['id']">selected="selected"</if>>{$v.cname}</option>
 					<volist name="v.child" id="vv">
-						<option value="{$vv.id}" <if condition="$mes.cid eq $vv['id']">selected="selected"</if>>|--|--{$vv.cname}</option>
+						<option value="{$vv.id}" <if condition="$mes.cid eq $vv['id']">selected="selected"</if>>|--{$vv.cname}</option>
 					</volist>
 				</volist>
 				</select>

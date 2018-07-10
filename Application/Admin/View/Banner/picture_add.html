@@ -19,7 +19,7 @@
                 <select name="cid" class="select">
                     <!-- <option value="0">选择分类</option> -->
                 <volist name="cate" id="v">
-                    <option value="{$v.id}" <if condition="$mes.cid eq $v['id']">selected="selected"</if>>{$v.cname}</option>
+                    <option value="{$v.id}" <if condition="$v.id eq $info['cid']">selected="selected"</if>>{$v.cname}</option>
                 </volist>
                 </select>
                 </span> </div>

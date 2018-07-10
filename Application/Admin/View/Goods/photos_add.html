@@ -1,0 +1,76 @@
+<extend name="Public:base"/>
+<block name="main">
+<article class="page-container">
+	<form action="__SELF__" method="post" class="form form-horizontal" id="form-article-add" enctype="multipart/form-data">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$mes.name}" placeholder="" id="" name="name">
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">图片：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<div class="uploader-thum-container">
+					<div id="fileList" class="uploader-list"></div>
+					 <input type="file" name="route" style="display: none;" onchange="preview(this)">
+					<button onclick="upload_one();" class="btn btn-default btn-uploadstar radius" type="button">开始上传</button>
+					
+					<div id="preview" style="display: none;padding-top: 12px;"></div> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<input type="hidden" name="cid" value="{$cid}">
+				<button onclick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+				<button onclick="remove_input();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+			</div>
+		</div>
+	</form>
+</article>
+
+<script type="text/javascript" src="/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript">
+	function article_save(){
+		var name=$("input[name=name]").val();
+		// var unit=$("input[name=unit]").val();
+		// var price=$("textarea[name=price]").val();
+		// var content=$("textarea[name=content]").val();
+		// alert(name);
+		if(name == ''){
+			layer.msg("请输入图片名称！");
+			$("input[name=name]").focus();
+			return false;
+		}
+		// if(news_time == ''){
+		// 	layer.msg("请选择新闻发布日期！");
+		// 	$("input[name=news_time]").focus();
+		// 	return false;
+		// }
+		// if(summary == ''){
+		// 	layer.msg("请输入新闻摘要！");
+		// 	$("input[name=summary]").focus();
+		// 	return false;
+		// }
+		// if(content == ''){
+		// 	layer.msg("请输入新闻详情！");
+		// 	$("input[name=content]").focus();
+		// 	return false;
+		// }
+		$("#form-article-add").submit();
+	}
+	function remove_input()
+	{
+		window.history.back();
+		// window.location.href='__APP__/Content/index.html';
+	}
+	function upload_one()
+    {
+        $("input[name='route']").click();
+    }
+</script>
+
+</block>

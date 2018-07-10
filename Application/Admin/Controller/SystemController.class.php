@@ -8,12 +8,20 @@ class SystemController extends BaseController {
             $ico=$_FILES['ico'];
             if($ico['name'] != '')
             {
+                $oldlogo=$info['ico'];
+                  if($oldico){
+                    unlink($_SERVER['DOCUMENT_ROOT'].$oldico);
+                  }
                 $ico=$this->upload_one($ico);
                 $data['ico']=$ico;
             }
             $logo=$_FILES['logo'];
             if($logo['name'] != '')
             {
+                $oldlogo=$info['logo'];
+                  if($oldroute){
+                    unlink($_SERVER['DOCUMENT_ROOT'].$oldlogo);
+                  }
                 $logo=$this->upload_one($logo);
                 $data['logo']=$logo;
             }
@@ -40,6 +48,10 @@ class SystemController extends BaseController {
             $image=$_FILES['weipic'];
             if($image['name'] != '')
             {
+                $oldroute=$info['weipic'];
+                  if($oldroute){
+                    unlink($_SERVER['DOCUMENT_ROOT'].$oldroute);
+                  }
                 $image=$this->upload_one($image);
                 $data['weipic']=$image;
             }

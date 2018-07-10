@@ -249,12 +249,17 @@
 <script type="text/javascript" src="/Public/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript" src="/Public/admin/lib/webuploader/0.1.5/webuploader.js"></script> 
 <script type="text/javascript" src="/Public/admin/lib/My97DatePicker/WdatePicker.js"></script> 
+<!-- <script type="text/javascript" src="/Public/admin/static/h-ui.admin/js/H-ui.admin.page.js"></script> -->
+<script type="text/javascript" src="/Public/admin/lib/lightbox2/2.8.1/js/lightbox.min.js"></script>
 
 <!-- <script type="text/javascript" src="__PUBLIC/admin/lib/lightbox2/2.8.1/js/lightbox-plus-jquery.min.js"></script>  -->
 <script type="text/javascript">
 
 	var ue = UE.getEditor('editor');
 
+$(function(){
+    $.Huihover(".portfolio-area li");
+});
 // 单图上传预览
 function preview(file)  
 {  

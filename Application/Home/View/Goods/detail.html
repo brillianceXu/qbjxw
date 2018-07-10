@@ -180,28 +180,27 @@
             <div class="y_title">
                 <a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/Goods/index">产品中心</a> > <a href="">其他酱香系列</a> > <a href="">贵州大曲</a> >
             </div>
-            <div class="cp-box">
+            <div class="cp-box" style="margin-bottom: 0px;">
                 <div class="lanrenzhijia">
                     <!-- 大图begin -->
                     <div id="preview" class="spec-preview">
-                        <span class="jqzoom"><img jqimg="picture/20180628111447513.jpg" src="picture/20180628111447513.jpg" /></span>
+                        <span class="jqzoom"><img jqimg="{$images[0]['route']}" src="{$images[0]['route']}" /></span>
                     </div>
                     <!-- 大图end -->
                     <!-- 缩略图begin -->
                     <div class="spec-scroll"> <a class="prev">&lt;</a> <a class="next">&gt;</a>
                         <div class="items">
                             <ul>
-                                <li><img bimg="/uploadfile/2018/0628/GZDQ-02.jpg" src="/Public/home/picture/thumb_350_350_gzdq-02.jpg" onmousemove="preview(this);"></li>
-                                <li><img bimg="/uploadfile/2018/0628/GZDQ-04.jpg" src="/Public/home/picture/thumb_350_350_gzdq-04.jpg" onmousemove="preview(this);"></li>
-                                <li><img bimg="/uploadfile/2018/0628/GZDQ-05.jpg" src="/Public/home/picture/thumb_350_350_gzdq-05.jpg" onmousemove="preview(this);"></li>
-                                <li><img bimg="/uploadfile/2018/0628/GZDQ-07.jpg" src="/Public/home/picture/thumb_350_350_gzdq-07.jpg" onmousemove="preview(this);"></li>
-                                <li><img bimg="/uploadfile/2018/0628/GZDQ-06.jpg" src="/Public/home/picture/thumb_350_350_gzdq-06.jpg" onmousemove="preview(this);"></li>
+                                <volist name="images" id="v">
+                                <li><img bimg="{$v.route}" src="{$v.route}" onmousemove="preview(this);"></li>
+                                </volist>
+                               
                             </ul>
                         </div>
                     </div>
                     <!-- 缩略图end -->
-                    <script src="js/jquery.jqzoom.js"></script>
-                    <script src="js/lanrenzhijia.js"></script>
+                    <script src="/Public/home/js/jquery.jqzoom.js"></script>
+                    <script src="/Public/home/js/lanrenzhijia.js"></script>
                 </div>
                 <div class="cp-js">
                     <h1>{$mess.name}</h1>
@@ -210,22 +209,21 @@
                     </p>
                     <p><strong>名&nbsp;&nbsp;称</strong>：{$mess.name}</p>
                     <p><strong>香&nbsp;&nbsp;型</strong>：酱香型</p>
-                    <p><strong>酒精度</strong>：53%vol% vol</p>
-                    <p><strong>净含量</strong>：2500ml ml</p>
+                    <p><strong>酒精度</strong>：{$mess.degree}%vol</p>
+                    <p><strong>净含量</strong>：{$mess.net_wt}ml </p>
                     <p><strong>总代理</strong>：</p>
                     <p><strong>包&nbsp;&nbsp;装</strong>：彩盒、酒瓶、外箱</p>
-                    <p class="cp-js-img"><a href="/" target="_blank"><img src="/Public/home/picture/sp.gif" alt="茅台官方商城网站" title="茅台官方商城网站" border="0" /></a></p>
+                    <p class="cp-js-img"><a href="/" target="_blank"><img src="/Public/home/picture/sp.gif" alt="" title="" border="0" /></a></p>
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="wz-box"><img alt="" src="picture/gzdq-04800x800.jpg" style="height: 800px; width: 800px" />
+            <div class="wz-box"><img alt="" src="{$mess.picture}" style="height: 800px; width: 800px" />
+                <br /><strong>详细描述</strong>
                 <br />
-                <br />
-                <br />
-                <br /> 产品名称：53%vol&nbsp; 2.5L贵州大曲酒(戊戌狗年)
-                <br /> 53%vol&nbsp; 2.5L贵州大曲酒（戊戌狗年），由贵州茅台酒股份有限公司出品，是一款集生肖文化、五行文化、书画文化、白酒文化于一身，具有很高艺术品位和收藏价值的生肖纪念酒。
-                <br /> 贵州大曲（戊戌狗年）酒，传承茅台酒传统酿造工艺，瓶形源自茅台酒的酿酒用&ldquo;酒甑子&rdquo;，采用与五行契合的&ldquo;五斤&rdquo;装大容量的大坛设计，以戊戌年属土的&ldquo;大地金&rdquo;作为主色调，添加梅花浮雕压纹工艺，寓意为&ldquo;两全其美&rdquo;，特邀中国美术家协会会员李宏钧先生绘制画作《犬》，配以中国书法家王文杰先生墨宝，寓有忠犬守福，神来气旺之意，乃醇美臻选、品藏皆宜之佳品。
-                <br />
+                <hr>
+                <br /> 产品名称：{$mess.name}
+                <br /> {$mess.summary}
+                <br />{$mess.content}
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>

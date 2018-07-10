@@ -4,22 +4,19 @@ class GoodsController extends BaseController {
     public function index(){
       $model=M("goods");
       $Cmodel=M("category");
-      $where['status']=1;
+      // $where['status']=1;
 
-      $cate=$Cmodel->where("pid=4 and status=1")->select();
-      // $cid=I("cid");
-      $cid=5;
-
-      // if($cid || $cid !=''){
-      //   $where['cid']=$cid;
-      //   $str.="/cid/".$cid;
-      // }
-      // $keywords=$_GET['keywords'];
-      $where['cid']=$cid;
-      // if($keywords || $keywords !=''){
-      //   $where['title|content']=array("like","%".$keywords."%");
-      //   $str.="/keywords/".$keywords;
-      // }
+      $cond['status']=1;
+      $cond['pid']=2;
+      $cate=$Cmodel->where($cond)->select();
+      foreach ($cate as $k => $v) {
+          $child=$Cmodel->where("pid=".$v['id'])->select();
+          $cate[$k]['child']=$child;
+      }
+      $cid=I("cid");
+      if($cid){
+        $where['cid']=$cid;
+      }
 
       $page=$_GET['page'];
       $page=($page==null)?"1":$page;
@@ -33,7 +30,7 @@ class GoodsController extends BaseController {
       // print_r($article);exit;
       $this->assign("cate",$cate);
       $this->assign("page",$page);
-      $this->assign("cate",$cate);
+      $this->assign("cid",$cid);
       $this->assign("str",$str);
       $this->assign("keywords",$keywords);
       $this->assign("totalPage",$totalPage);
@@ -46,9 +43,17 @@ class GoodsController extends BaseController {
     {
       $model=M("goods");
       $Cmodel=M("category");
-      $where['status'] = 1;
-      $category=$Cmodel->where($where)->select();
-      $cate=$this->unlimitedForLayer($category);
+      // $where['status'] = 1;
+      // $where['pid'] = array("neq","0");
+      // $category=$Cmodel->where($where)->select();
+      // $cate=$this->unlimitedForLayer($category);
+      $cond['status']=1;
+      $cond['pid']=2;
+      $cate=$Cmodel->where($cond)->select();
+      foreach ($cate as $k => $v) {
+          $child=$Cmodel->where("pid=".$v['id'])->select();
+          $cate[$k]['child']=$child;
+      }
       $id=$_GET['id'];
       if($_POST){
         // print_r($_POST);exit;
@@ -67,6 +72,10 @@ class GoodsController extends BaseController {
         $image=$_FILES['picture'];
         if($image['name'] != '')
         {
+          $oldroute=$info['picture'];
+          if($oldroute){
+            unlink($_SERVER['DOCUMENT_ROOT'].$oldroute);
+          }
             $image=$this->upload_one($image);
             $data['picture']=$image;
         }
@@ -177,6 +186,69 @@ class GoodsController extends BaseController {
           $this->display();
       }
     }
+    public function photos(){
+      $cid=I("cid");
+      $model=M("image");
+      $where['cid']=$cid;
+      $where['status']=2;
+      $mess=$model->where($where)->select();
+      $this->assign("mess",$mess);
+      $this->assign("cid",$cid);
+      $this->assign("controller_name","Goods");
+      $this->assign("action_name","index");
+      $this->display();
+    }
+    public function photos_add()
+    {
+      $model=M("image");
+      $cid=$_GET['cid'];
+      if($_POST){
+        // print_r($_POST);exit;
+        // exit();
+        $data['name']=I('name');
+        $data['cid']=I('cid');
+        $image=$_FILES['route'];
+        if($image['name'] != '')
+        {
+          $oldroute=$info['route'];
+          if($oldroute){
+            unlink($_SERVER['DOCUMENT_ROOT'].$oldroute);
+          }
+            $image=$this->upload_one($image);
+            $data['route']=$image;
+        }
+        $data['status']=2;
+        $data['addtime']=time();
+        
+          $result=$model->add($data);
+          $log_mes="添加产品图片";
+        
+        if($result){
+          $this->add_log($log_mes,1,$log_mes."：".$data['title']);
+          $this->success($log_mes."成功");
+        }else{
+          $this->error($log_mes."失败");
+        }
+      }else{
+        $this->assign("cid",$cid);
+        $this->assign("controller_name","Goods");
+        $this->assign("action_name","index");
+        $this->display();
+      }
+    }
+     public function img_del(){
+      $id=$_GET['id'];
+      $model=M("image");
+      $art_mes=$model->find($id);
+      // $data['status']=0;
+      $res=$model->delete($id);
+      if($res){
+        $this->add_log("图片删除",1,"删除图片:".$art_mes['name']);
+        $this->ajaxReturn("200");
+      }else{
+        $this->ajaxReturn("400");
+      }
+    }
     public function del_cate(){
       $model=M("category");
       $id=$_GET['id'];
@@ -200,6 +272,28 @@ class GoodsController extends BaseController {
         $this->ajaxReturn("200");
       }else{
         $this->ajaxReturn("400");
+      }
+    }
+    public function goods_up(){
+      $model=M("goods");
+      $where['id']=I("id");
+      $data['status']=1;
+      $result=$model->where($where)->save($data);
+      if(!$result){
+        $this->ajaxReturn("400");
+      }else{
+        $this->ajaxReturn("200");
+      }
+    }
+    public function goods_down(){
+      $model=M("goods");
+      $where['id']=I("id");
+      $data['status']=0;
+      $result=$model->where($where)->save($data);
+      if(!$result){
+        $this->ajaxReturn("400");
+      }else{
+        $this->ajaxReturn("200");
       }
     }
 }

@@ -8,14 +8,17 @@
                 <select name="cid" class="select">
                     <option value="0">全部分类</option>
                     <volist name="cate" id="v">
-                    <option value="{$v.id}" <if condition="$cid eq $v['id']" >selected="selected"</if>>{$v.cname}</option>
+                        <option value="{$v.id}" <if condition="$cid eq $v['id']" >selected="selected"</if>>{$v.cname}</option>
+                        <volist name="v.child" id="vv">
+                            <option value="{$vv.id}" <if condition="$cid eq $vv['id']" >selected="selected"</if>>|--{$vv.cname}</option>
+                        </volist>
                     </volist>
                     <!-- <option value="2">分类二</option> -->
                 </select>
                 </span>
                 <input type="text" name="keywords" id="" placeholder="{$keywords|default=" 搜索标题或者内容 "}" style="width:250px" class="input-text">
                 <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
-                <button name="" id="" class="btn btn-primary" type="button" onclick="window.location.href='__APP__/Admin/Goods/goods_add.html';"><i class="Hui-iconfont">&#xe600;</i> 添加</button>
+                <button name="" id="" class="btn btn-primary" type="button" onclick="window.location.href='__APP__/Admin/Goods/goods_add/cid/{$cid}.html';"><i class="Hui-iconfont">&#xe600;</i> 添加</button>
             </div>
         </form>
         <!-- <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> -->
@@ -30,16 +33,21 @@
                 <volist name="article" id="v">
                 <div class="col-md-3" style="padding: 15px;">
                     <div class="thumbnail">
-                        <img alt="300x200" src="{$v.picture}" style="width:100%;height: auto;" />
+                        <img alt="300x200" src="{$v.picture}"  />
                         <div class="caption">
-                            <h3>
-                                <a href="__APP__/Admin/Goods/show.html">{$v.name}</a>
-                            </h3>
+                            <h4 >
+                                <a href="__APP__/Home/Goods/detail.html">{$v.name}</a>
+                            </h4 >
+                            
                             <p>
-                                {$v.summary}
-                            </p>
-                            <p>
-                                 <a class="btn btn-primary" href="#">上架</a> <a class="btn" href="#">相册</a> <a class="btn" href="#">详情……</a>
+                                 <a class="btn btn-default" href="__APP__/Admin/Goods/goods_add/id/{$v.id}.html">编辑</a>
+                                 <if condition="$v.status eq 0">
+                                    <a class="btn btn-warning" href="javascript:;" onclick="goods_up({$v.id});">上架</a>
+                                    <else/>
+                                  <a class="btn btn-primary" href="javascript:;" onclick="goods_down({$v.id});">下架</a>
+                                </if>
+                                   <a class="btn btn-success" href="__APP__/Admin/Goods/photos/cid/{$v.id}">相册</a> 
+                                   <a class="btn btn-secondary" target="_blank" href="__APP__/Home/Goods/detail/id/{$v.id}">详情</a>
                             </p>
                         </div>
                     </div>
@@ -96,7 +104,7 @@
 
     function article_del(id) {
         layer.confirm("确定要删除吗？", function() {
-            $.get("__APP__/Admin/Content/del_article", {
+            $.get("__APP__/Admin/Goods/del_article", {
                 id: id
             }, function(msg) {
                 if (msg == 200) {
@@ -114,10 +122,45 @@
     }
   
 
-
+    function goods_up(id){
+        layer.confirm("确定要上架该商品吗？", function() {
+            $.get("__APP__/Admin/Goods/goods_up", {
+                id: id
+            }, function(msg) {
+                if (msg == 200) {
+                    layer.msg('已上架!', {
+                        icon: 5,
+                        time: 1000
+                    }, function() {
+                        window.location.reload();
+                    });
+                } else {
+                    layer.msg('上架失败!');
+                }
+            });
+        });
+    }
+    function goods_down(id){
+        layer.confirm("确定要下架该商品吗？", function() {
+            $.get("__APP__/Admin/Goods/goods_down", {
+                id: id
+            }, function(msg) {
+                if (msg == 200) {
+                    layer.msg('已下架!', {
+                        icon: 5,
+                        time: 1000
+                    }, function() {
+                        window.location.reload();
+                    });
+                } else {
+                    layer.msg('下架失败!');
+                }
+            });
+        });
+    }
     function do_sort(id) {
         var sort = $("input[name=sort" + id + "]").val();
-        $.get("__APP__/Admin/Content/done_sort", {
+        $.get("__APP__/Admin/Goods/done_sort", {
             id: id,
             sort: sort
         }, function(msg) {
