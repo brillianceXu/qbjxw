@@ -200,11 +200,10 @@ class ContentController extends BaseController {
       $answer=I("answer");
       $updatetime=time();
       $status=2;
-      $data['id']=$rid;
       $data['updatetime']=$updatetime;
       $data['answer']=$answer;
       $data['status']=$status;
-      $res=$model->add($data);
+      $res=$model->where("id=".$rid)->save($data);
       if($res){
         $this->ajaxReturn("200");
       }else{
