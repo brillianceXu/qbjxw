@@ -35,86 +35,16 @@
             <div class="wz-box">
                 <div style="width: 800px;margin-right: auto;margin-left: auto;">
                     <!--循环的开始-->
+                    <volist name="mess" id="v">
                     <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：茅台年份？</strong>
-                        <p style="font-size: 12px;color: #999999;">2018-06-26 13:07:13
+                        <strong style="color:#000000">问：{$v.title}</strong>
+                        <p style="font-size: 12px;color: #999999;">{$v.addtime|date="Y-m-d H:i:s",###}
                             <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">我有瓶茅台，看不到生产日期了</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，您可以到当地的专卖店或直营店进行验证。或拨打电话：18185228522； 18185228521； 0851-22386145咨询；
+                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">{$v.content}</p>
+                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>{$v.answer}
                                     <p>
                     </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：关于申请退款问题？</strong>
-                        <p style="font-size: 12px;color: #999999;">2018-03-03 11:08:35
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">我在茅台商城购买了飞天茅台两瓶，由于是帮朋友买的购买数量有误，在18年3月3日没有发货的前提下申请了退款，请问退款何时能申请成功。</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，建议您拨打客服热线400-818-9999咨询。
-                                    <p>
-                    </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：求真伪？</strong>
-                        <p style="font-size: 12px;color: #999999;">2018-03-02 11:57:44
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">我买了两箱2008年飞天茅台，怎么查真伪？谢谢</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，您可以到当地的专卖店或直营店进行验证。或拨打电话：18185228522； 18185228521； 0851-22386145咨询；
-                                    <p>
-                    </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：茅台活动？</strong>
-                        <p style="font-size: 12px;color: #999999;">2018-02-19 17:54:11
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">电视广告有茅台活动。10元钱抵2000多可以买六瓶茅台酒是真的吗?</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，不是真的。如您需要购买茅台酒，建议您到我公司的专卖店或直营店购买。请您登录茅台酒国内经销网址：http://www.moutaichina.com/fuwu/guoneijingxiaoshang/查询
-                                    <p>
-                    </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：茅台商城怎么上不去？</strong>
-                        <p style="font-size: 12px;color: #999999;">2018-02-19 12:31:29
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">茅台商城怎么上不去？官网可上去，但同城的页面打不开</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，茅台商城官方网站可以登陆的，请您登陆茅台商城官方网站https://www.emaotai.cn/
-                                    <p>
-                    </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：真假？</strong>
-                        <p style="font-size: 12px;color: #999999;">2017-10-09 18:52:50
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">我有瓶1990年的五星茅台！怎么查真伪</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，您可以到当地的专卖店或直营店进行验证。或拨打电话：18185228522； 18185228521； 0851-22386145咨询；
-                                    <p>
-                    </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：如何网上购买？</strong>
-                        <p style="font-size: 12px;color: #999999;">2017-10-08 23:14:34
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">可以在网上购买吗</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，可以在网上进行购买，请您登录我公司茅台商城：http://www.emaotai.cn/
-                                    <p>
-                    </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：求真伪？</strong>
-                        <p style="font-size: 12px;color: #999999;">2017-08-17 13:48:43
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">我刚收买到6瓶53度矛台酒，用手机验证，只有一瓶显示成功，另2瓶没反应，为何.箱中没有发票</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，您可以到当地的专卖店或直营店进行验证。或拨打电话：18185228522； 18185228521； 0851-22386145咨询；
-                                    <p>
-                    </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：手机APP茅台云商是官方授权么？</strong>
-                        <p style="font-size: 12px;color: #999999;">2017-08-17 11:18:23
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">手机下载茅台云商购买飞天茅台是否官方授权网购</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>您好，茅台云商下载渠道，请您登陆茅台商城官方网站：https://www.emaotai.cn/下载。
-                                    <p>
-                    </div>
-                    <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：198元一箱茅台？</strong>
-                        <p style="font-size: 12px;color: #999999;">2017-08-10 16:49:47
-                            <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">有电话推销198元一箱茅台，是真的吗？</p>
-                                <p style="color:#000000"><strong style="color:#FF0000">答：</strong>请您直接拨打我公司打假办电话：18185228522； 18185228521； 0852-2386145咨询；
-                                    <p>
-                    </div>
+                    </volist>
                     <!--循环的结束，以下为重复代码-->
                     <!--重复代码结束，分页代码开始 -->
                     <div id="pages">

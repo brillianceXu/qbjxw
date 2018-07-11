@@ -3,13 +3,12 @@ namespace Home\Controller;
 class ServiceController extends BaseController {
     public function consult(){
     	$Cmodel=M("category");
-    	$model=M("news");
+    	$model=M("message");
     	$cate=$Cmodel->where("pid=4 and status=2")->select();
-    	$cid=I("cid");
-    	$cid=empty($cid)?$cate[0]['id']:$cid;
+    	
 
     	// $cname=$Cmodel->where("id=".$cid)->getField("cname");
-    	$where['cid']=$cid;
+    	$where['status']=2;
     	$page=$_GET['page'];
       	$page=($page==null)?"1":$page;
       	$pageSize=20;
@@ -17,7 +16,7 @@ class ServiceController extends BaseController {
       	$totalPage=ceil($article_count/$pageSize);
       	$start=($page-1)*$pageSize;
 
-    	$mess=$model->where($where)->limit($start,$pageSize)->select();
+    	$mess=$model->where($where)->limit($start,$pageSize)->order("id desc")->select();
 
     	$this->assign("cname",$cname);
     	$this->assign("cid",$cid);
@@ -73,7 +72,7 @@ class ServiceController extends BaseController {
     public function checkCode()
     {
         $Verify = new \Think\Verify;
-        if(!$Verify->check($_POST['code']))
+        if(!$Verify->check(I('code')))
         {
             $this->ajaxReturn("400");
         }else{

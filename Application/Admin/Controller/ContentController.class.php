@@ -154,7 +154,6 @@ class ContentController extends BaseController {
       $status=I("status");
       $status=empty($status)?"1":$status;
       $where['status']=$status;
-      $where['type']=1;
       $str='';
       $action_name="consult";
 
@@ -194,6 +193,35 @@ class ContentController extends BaseController {
       $this->assign("article_count",$article_count);
       $this->assign("article",$article);
       $this->display();
+    }
+    public function replay(){
+      $model=M("message");
+      $rid=I("rid");
+      $answer=I("answer");
+      $updatetime=time();
+      $status=2;
+      $data['id']=$rid;
+      $data['updatetime']=$updatetime;
+      $data['status']=$status;
+      $res=$model->add($data);
+      if($res){
+        $this->ajaxReturn("200");
+      }else{
+        $this->ajaxReturn("100");
+      }
+    }
+    public function replay_del(){
+      $id=$_GET['id'];
+      $model=M("message");
+      $art_mes=$model->find($id);
+      $data['status']=0;
+      $res=$model->where("id=".$id)->save($data);
+      if($res){
+        $this->add_log("留言删除",1,"删除留言:".$art_mes['title']);
+        $this->ajaxReturn("200");
+      }else{
+        $this->ajaxReturn("400");
+      }
     }
     public function do_recommend(){
       $model=M("news");
