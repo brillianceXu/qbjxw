@@ -46,4 +46,38 @@ class ServiceController extends BaseController {
     	$this->assign("mess",$mess);
         $this->display();
     }
+    public function save_msg(){
+        $data=I();
+        $data['addtime']=time();
+        $model=M("message");
+        $res=$model->add($data);
+        if(!$res){
+            $this->ajaxReturn("400");
+        }else{
+            $this->ajaxReturn("200");
+        }
+    }
+    public function verify()
+    {
+        $config =    array(
+            'fontSize'    =>    100,    // 验证码字体大小
+            'length'      =>    4,     // 验证码位数
+            'useNoise'    =>    false, // 关闭验证码杂点
+            // 'useImgBg'    =>    true,
+            'fontSize'    =>    30
+        );
+        $Verify = new \Think\Verify($config);
+        // $Verify->codeSet = '0123456789afdsawqerqrqwerqrwqrqrqrsdffgdfghszdvvxzcvzxvcw'; 
+        $Verify->entry();
+    }
+    public function checkCode()
+    {
+        $Verify = new \Think\Verify;
+        if(!$Verify->check($_POST['code']))
+        {
+            $this->ajaxReturn("400");
+        }else{
+            $this->ajaxReturn("200");
+        }
+    }
 }

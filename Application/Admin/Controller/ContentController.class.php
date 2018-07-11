@@ -19,19 +19,20 @@ class ContentController extends BaseController {
       }else{
         $action_name="business";
       }
+      $cate=$Cmodel->where("pid=".$pid." and status=2")->select();
       
-      $where['cid']=array("in",$arr);
       $cid=$_GET['cid'];
       $keywords=$_GET['keywords'];
       if($cid && $cid  != '0'){
         $where['cid']=$cid;
         $str.="/cid/".$cid;
       }else{
-        $cate=$Cmodel->where("pid=".$pid." and status=2")->select();
+        
         $arr=array();
         for ($i=0; $i < count($cate); $i++) { 
           $arr[]=$cate[$i]['id'];
         }
+        $where['cid']=array("in",$arr);
       }
       if($keywords || $keywords !=''){
         $where['title|content']=array("like","%".$keywords."%");
@@ -153,13 +154,14 @@ class ContentController extends BaseController {
       $status=I("status");
       $status=empty($status)?"1":$status;
       $where['status']=$status;
+      $where['type']=1;
       $str='';
       $action_name="consult";
 
       $keywords=$_GET['keywords'];
    
       if($keywords || $keywords !=''){
-        $where['title|content']=array("like","%".$keywords."%");
+        $where['title|username']=array("like","%".$keywords."%");
         $str.="/keywords/".$keywords;
       }
 

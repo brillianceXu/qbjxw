@@ -45,7 +45,7 @@ class AboutController extends BaseController {
     public function detail(){
     	$Cmodel=M("category");
     	$model=M("news");
-    	$cate=$Cmodel->where("pid=3 and status=2")->select();
+    	$cate=$Cmodel->where("pid=1 and status=2")->select();
     	$id=I("id");
     	$where['id']=$id;
     		

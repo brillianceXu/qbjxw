@@ -60,7 +60,7 @@
                             <td class=""><u style="cursor:pointer" class="text-primary"  title="{$v.title}">{$v.title}</u></td>
                             <td>{$v.addtime|date="Y-m-d H:i:s",### }</td>
                             <!-- <td>{$v.update_time}</td> -->
-                            <td>{$v.content|mb_substr=0,25,'uft-8'}...</td>
+                            <td>{$v.content|mb_substr=0,50,'uft-8'}...</td>
                             <td><if condition="$v.status eq 1">未查看<elseif condition="$v.status eq 2"/>已回复<else/>已删除</if></td>
                             <td class="f-14 td-manage">
                                 <a style="text-decoration:none" class="ml-5" href="__APP__/Admin/Content/show/id/{$v.id}/pid/{$pid}.html" title="回复"><i class="Hui-iconfont">回复</i></a>

@@ -124,9 +124,6 @@
                 <!--分页代码结束 -->
                 <script src="/Public/home/js/jquery.js" charset="UTF-8"></script>
                 <script src="/Public/home/js/bootstrap.js" charset="UTF-8"></script>
-                <script src="/Public/home/js/city-picker.data.js" charset="UTF-8"></script>
-                <script src="/Public/home/js/city-picker.js" charset="UTF-8"></script>
-                <script src="/Public/home/js/main.js" charset="UTF-8"></script>
                 <script type="text/javascript" src="/Public/home/js/formvalidator.js" charset="UTF-8"></script>
                 <script type="text/javascript" src="/Public/home/js/formvalidatorregex.js" charset="UTF-8"></script>
                 <link href="/Public/home/css/guestbook.css" rel="stylesheet" type="text/css" />
@@ -140,20 +137,20 @@
                                 <tr>
                                     <th>留言标题：</th>
                                     <td>
-                                        <input type="text" value="" id="title" name="title" class="input-text" style="width:504px" onkeyup="value=" /oblog/value.replace(/[^\u4E00-\u9FA5]/g, '')>
+                                        <input type="text" value="" id="title" name="title" class="input-text" style="width:504px">
                                     </td>
                                 </tr>
                                 <tr>
                                     <tr>
                                         <th>留言内容：</th>
                                         <td>
-                                            <textarea name="introduce" cols="40" rows="5" class="input-text" id="introduce" style='width:500px;height:70px;'></textarea>
+                                            <textarea name="content" cols="40" rows="5" class="input-text" id="content" style='width:500px;height:70px;'></textarea>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>您的姓名：</th>
                                         <td>
-                                            <input type="text" value="" id="name" name="name" class="input-text" onkeyup="value=" /oblog/value.replace(/[^\u4E00-\u9FA5]/g, '')>
+                                            <input type="text" value="" id="username" name="username" class="input-text">
                                         </td>
                                     </tr>
                                     <tr>
@@ -171,25 +168,39 @@
                                 <tr>
                                     <th>联系电话：</th>
                                     <td>
-                                        <input type="text" size="40" value="" name="tel" id="tel" class="input-text">
+                                        <input type="text" size="40" value="" name="mobile" id="mobile" class="input-text">
                                     </td>
                                 </tr>
-                                <tr hidden>
+                           <!--      <tr hidden>
                                     <th>所属分类：</th>
                                     <td width="300">
                                         <input type="text" name="typeid" value="58" id="typeid" />
                                     </td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <th>所在地区：</th>
                                     <td>
                                         <div id="distpicker">
                                             <div class="form-group">
                                                 <div style="position: relative;">
-                                                    <input id="city-picker3" style="width:260px;" class="form-control" readonly type="text" value=" " data-toggle="city-picker" name="address">
+                                                    <input style="width:260px;" class="form-control" type="text" value=" "  name="address" id="address">
                                                 </div>
                                             </div>
                                         </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>验证码：</th>
+                                    <td>
+                                        <!-- <input class="input-text size-L radius" type="text" name="code" placeholder="验证码" style="width:150px;"> -->
+                                        <img id="verifyImg" src="__APP__/Home/Service/verify" width="auto" height="20" class="radius ml-5" onClick="this.src=this.src+'?'+Math.random()" title="点击刷新验证码" style="height: auto" >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td>
+                                        <input class="input-text size-L radius" type="text" name="code" id="code" placeholder="验证码" style="width:150px;">
+                                        <!-- <img id="verifyImg" src="__APP__/Home/Service/verify" width="auto" height="20" class="radius ml-5" onClick="this.src=this.src+'?'+Math.random()" title="点击刷新验证码" style="height: 20px;position: relative;top: 5px;" > -->
                                     </td>
                                 </tr>
                                 <tr>
@@ -212,23 +223,23 @@
 
                 $("#title").formValidator({ onshow: "请输入留言标题", onfocus: "请输入留言标题" }).inputValidator({ min: 4, max: 80, onerror: "标题应该为2-10个汉字" }).regexValidator({ regexp: "ps_username", datatype: "enum", onerror: "标题格式错误" });
 
-                $("#name").formValidator({ onshow: "请输入姓名", onfocus: "请输入姓名" }).inputValidator({ min: 4, max: 10, onerror: "姓名应该为2-3个汉字" }).regexValidator({ regexp: "ps_username", datatype: "enum", onerror: "姓名格式错误" });
+                $("#username").formValidator({ onshow: "请输入姓名", onfocus: "请输入姓名" }).inputValidator({ min: 4, max: 10, onerror: "姓名应该为2-3个汉字" }).regexValidator({ regexp: "ps_username", datatype: "enum", onerror: "姓名格式错误" });
 
                 $("#email").formValidator({ onshow: "请输入电子邮箱", onfocus: "请输入电子邮箱", oncorrect: "邮箱格式正确" }).inputValidator({ min: 2, max: 32, onerror: "邮箱应该为2-32位之间" }).regexValidator({ regexp: "email", datatype: "enum", onerror: "请填写正确的邮箱地址" });
 
                 //                    $("#lxqq").formValidator({onshow:"请输入QQ号码",onfocus:"请输入QQ号码",oncorrect:"QQ格式正确"}).inputValidator({min:5,max:10,onerror:"QQ号码应该为5-10位之间"}).regexValidator({regexp:"^[0-9]{5,20}$",onerror:"请填写正确的腾讯QQ号"});
 
-                $("#tel").formValidator({ onshow: "请输入联系电话", onfocus: "请输入联系电话", oncorrect: "电话格式正确" }).inputValidator({ min: 8, max: 13, onerror: "电话号码应该为8-13为之间" }).regexValidator({ regexp: "^[0-9-]{6,13}$", onerror: "请填写正确的电话号码" });
-                $("#introduce").formValidator({ onshow: "请输入留言内容", onfocus: "请输入留言内容" }).inputValidator({ min: 10, max: 200, onerror: "10-100个字之间" });
+                $("#mobile").formValidator({ onshow: "请输入联系电话", onfocus: "请输入联系电话", oncorrect: "电话格式正确" }).inputValidator({ min: 8, max: 13, onerror: "电话号码应该为8-13为之间" }).regexValidator({ regexp: "^[0-9-]{6,13}$", onerror: "请填写正确的电话号码" });
+                $("#content").formValidator({ onshow: "请输入留言内容", onfocus: "请输入留言内容" }).inputValidator({ min: 10, max: 200, onerror: "10-100个字之间" });
 
                 $("#code").formValidator({ onshow: "请输入验证码", onfocus: "验证码不能为空" }).inputValidator({ min: 1, max: 999, onerror: "验证码不能为空" }).ajaxValidator({
                     type: "get",
-                    url: "",
-                    data: "m=pay&c=deposit&a=public_checkcode",
-                    datatype: "html",
+                    url: "__APP__/Home/Service/checkCode",
+                    data: {code:$("#code").val()},
+                    datatype: "json",
                     async: 'false',
                     success: function(data) {
-                        if (data == 1) {
+                        if (data == 200) {
                             return true;
                         } else {
                             return false;
@@ -251,20 +262,23 @@
                 }
                 $.ajax({
                     type: 'POST',
-                    url: '',
+                    url: '__APP__/Home/Service/save_msg',
                     dataType: 'json',
                     data: {
                         title: $('#title').val(),
-                        introduce: $('#introduce').val(),
-                        name: $('#name').val(),
+                        content: $('#content').val(),
+                        username: $('#username').val(),
                         email: $('#email').val(),
-                        tel: $('#tel').val(),
-                        typeid: $('#typeid').val(),
+                        mobile: $('#mobile').val(),
                         sex: sex,
-                        address: $('#city-picker3').val(),
+                        address: $('address').val(),
                     },
                     success: function(data) {
-                        alert(data['message']);
+                        if(data==200){
+                            alert("留言成功");
+                        }else{
+                            alert("留言失败，请重试");
+                        }
                     }
                 })
             });
