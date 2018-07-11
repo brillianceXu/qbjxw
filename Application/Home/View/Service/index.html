@@ -4,14 +4,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <include file="Public:header" />
-    <title>茅台集团喜获仁怀市纪念改革开放四十周年合唱比赛冠军 - 公司新闻 - 国酒茅台-官网</title>
+    <title>{$mess.title} - 服务中心 -  黔北酒乡网</title>
 </head>
 
 <body>
     <div class="top">
         <include file="Public:nav" />
     </div>
-    <div class="box-ntop" style="background-image: url(images/20160119090335319_1.jpg);background-color: #4D70B4"></div>
+    <div class="box-ntop" style="background-image: url({$banner});background-color: #4D70B4"></div>
     <div class="box-n-1200">
         <div class="zuobian tyyj-gy">
             <div class="list-title yuanjiao">服务中心</div>
@@ -24,11 +24,11 @@
         </div>
         <div class="youbian tyyj-gy" style="min-height:800px">
             <div class="y_title">
-                <a href="/">首页</a><span> &gt; </span><a href="">服务中心</a> > <a href=""></a> >
+                <a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/Service/index">服务中心</a>  > {$mess.title}
             </div>
             <div class="wz-title">
                 <h1>{$mess.title} </h1>
-                <div style="font-size: 12px;line-height: 30px;text-align: center;margin-right: auto;margin-left: auto;"> 发布时间：{$mess.news_time|date="Y-m-d H:i:s",###} &nbsp;&nbsp; 来源：黔北酒乡网 &nbsp;&nbsp; </div>
+                <!-- <div style="font-size: 12px;line-height: 30px;text-align: center;margin-right: auto;margin-left: auto;"> 发布时间：{$mess.news_time|date="Y-m-d H:i:s",###} &nbsp;&nbsp; 来源：黔北酒乡网 &nbsp;&nbsp; </div> -->
             </div>
             <div class="wz-box">
                 {$mess.content}

@@ -20,7 +20,8 @@ class BusinessController extends BaseController
         $caiwu           = $model->where($where)->limit("0,10")->select();
 
         $article = $model->where($con)->find();
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
         $this->assign("gonggao", $gonggao);
         $this->assign("caiwu", $caiwu);
         $this->assign("cate", $cate);
@@ -34,9 +35,10 @@ class BusinessController extends BaseController
         $cate   = $Cmodel->where("pid=5 and status=2")->select();
         $cid    = I("cid");
 
-        // $cname=$Cmodel->where("id=".$cid)->getField("cname");
+        $cname=$Cmodel->where("id=".$cid)->getField("cname");
         // $con['id']=$id;
         $where['cid']  = $cid;
+        $where['status'] = 1;
         $page          = $_GET['page'];
         $page          = ($page == null) ? "1" : $page;
         $pageSize      = 20;
@@ -45,10 +47,15 @@ class BusinessController extends BaseController
         $start         = ($page - 1) * $pageSize;
 
         $mess = $model->where($where)->limit($start, $pageSize)->select();
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
         $article = $model->where($con)->find();
-
+        $this->assign("cid", $cid);
+        $this->assign("page", $page);
+        $this->assign("totalPage", $totalPage);
+        $this->assign("article_count", $article_count);
         $this->assign("mess", $mess);
+        $this->assign("cname", $cname);
         $this->assign("cate", $cate);
         $this->assign("article", $article);
         $this->display();
@@ -66,6 +73,8 @@ class BusinessController extends BaseController
         // $cname=$Cmodel->where("id=".$cid)->getField("cname");
 
         // print_r($mess);exit;
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
         $this->assign("cid", $cid);
         // $this->assign("cname",$cname);
         $this->assign("cate", $cate);
@@ -80,16 +89,24 @@ class BusinessController extends BaseController
         $cid    = empty($cid) ? 17 : $cid;
 
         $cate = $cmodel->where("pid =5  and status = 2")->select();
-        // $cname=$Cmodel->where("id=".$cid)->getField("cname");
+        $cname=$Cmodel->where("id=".$cid)->getField("cname");
 
         $where['cid'] = $cid;
+        $where['status'] = 1;
         $mess         = $model->where($where)->find();
 
         $article = $model->where($con)->find();
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
         $this->assign("cate", $cate);
+        $this->assign("cname", $cname);
         $this->assign("mess", $mess);
         $this->assign("article", $article);
         $this->display();
+    }
+    public function get_banner(){
+        $imodel=M("image");
+        $banner=$imodel->where("cid = 16 and status = 1")->getField("route");
+        return $banner;
     }
 }

@@ -16,10 +16,11 @@ class GoodsController extends BaseController
             $cate[$k]['child'] = $child;
         }
         $cid = I("cid");
-
+        $str='';
         //
-
+        $where['status'] = 1;
         if ($cid) {
+            $str.="/cid/".$cid;
             $where['cid'] = $cid;
             $pmess        = $Cmodel->where("id=" . $cid)->find();
             $cname        = $pmess['cname'];
@@ -28,15 +29,18 @@ class GoodsController extends BaseController
         }
         $page          = $_GET['page'];
         $page          = ($page == null) ? "1" : $page;
+
         $pageSize      = 20;
         $article_count = $model->where($where)->count();
         $totalPage     = ceil($article_count / $pageSize);
         $start         = ($page - 1) * $pageSize;
 
         $mess = $model->where($where)->limit($start, $pageSize)->select();
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
         $this->assign("cname", $cname);
         $this->assign("cid", $cid);
+        $this->assign("str", $str);
         $this->assign("page", $page);
         $this->assign("totalPage", $totalPage);
         $this->assign("article_count", $article_count);
@@ -67,14 +71,24 @@ class GoodsController extends BaseController
         $cond['status'] = 2;
         $images         = M("image")->where($cond)->select();
 
+        $pmess        = $Cmodel->where("id=" . $cid)->find();
+        $cname        = $pmess['cname'];
+        $ccname       = $Cmodel->where("id=" . $pmess['pid'])->getField("cname");
+        $cname .= "--" . $ccname;
         // $cname=$Cmodel->where("id=".$cid)->getField("cname");
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
         // print_r($images);exit;
         $this->assign("images", $images);
         $this->assign("cid", $cid);
-        // $this->assign("cname",$cname);
+        $this->assign("cname",$cname);
         $this->assign("cate", $cate);
         $this->assign("mess", $mess);
         $this->display();
+    }
+    public function get_banner(){
+        $imodel=M("image");
+        $banner=$imodel->where("cid = 12 and status = 1")->getField("route");
+        return $banner;
     }
 }

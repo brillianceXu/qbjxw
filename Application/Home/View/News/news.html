@@ -4,15 +4,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="Content-Language" content="zh-CN">
-    <title>公司新闻 - 国酒茅台-官网</title>
+    
     <include file="Public:header" />
+    <title>{$cname}  - 新闻资讯 - 黔北酒乡网</title>
 </head>
 
 <body>
     <div class="top">
         <include file="Public:nav" />
     </div>
-    <div class="box-ntop" style="background-image: url(images/20160119090335319.jpg);background-color: #4D70B4;"></div>
+    <div class="box-ntop" style="background-image: url({$banner});background-color: #4D70B4;"></div>
     <div class="box-n-1200">
         <div class="zuobian tyyj-gy">
             <div class="list-title yuanjiao">新闻资讯</div>
@@ -25,7 +26,7 @@
         <div class="youbian tyyj-gy">
             <div class="y_title">
                 <!-- <h2>公司新闻</h2> -->
-                <p><a href="/">首页</a><span> &gt; </span><a href="/">新闻资讯</a> > <a href="/">公司新闻</a> > </p>
+                <p><a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/News/index">新闻资讯</a> > {$cname}  </p>
             </div>
             <ul class="list-nw" style="min-height:500px;">
             	<volist name="mess" id="v">
@@ -33,7 +34,18 @@
             	</volist>
                
             </ul>
-            <div id="pages"><a class="a1">2359条</a> <a href="" class="a1">上一页</a> <span>1</span> <a href="">2</a> <a href="">3</a> <a href="">4</a> <a href="">5</a> <a href="">6</a> <a href="">7</a> <a href="">8</a> <a href="">9</a> <a href="">10</a> ..<a href="">79</a> <a href="" class="a1">下一页</a></div>
+            <div id="pages" <if condition="$totalPage eq 0"> style="display:none;"</if>>
+                <if condition="$page elt 1">
+                    <else/>
+                <a href="__APP__/Home/News/news/cid/{$cid}/page/{$page-1}" class="a1">上一页</a> 
+                </if>
+                <span>{$page}/{$totalPage}</span>  
+                <if condition="$page egt $totalPage">
+                    <else/>
+                <a href="__APP__/Home/News/news/cid/{$cid}/page/{$page+1}" class="a1">下一页</a> 
+                </if>
+                <a class="a1">{$article_count}条</a> 
+            </div>
             <div class="clear"></div>
         </div>
         <div class="clear"></div>

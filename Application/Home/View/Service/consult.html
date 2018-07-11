@@ -6,14 +6,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <include file="Public:header" />
-    <title>在线咨询 - 国酒茅台-官网</title>
+    <title>在线咨询 -服务中心 -  黔北酒乡网</title>
 </head>
 
 <body>
     <div class="top">
         <include file="Public:nav" />
     </div>
-    <div class="box-ntop" style="background-image: url(images/20151228094018569.jpg);background-color: #FDC763"></div>
+    <div class="box-ntop" style="background-image: url({$banner});background-color: #FDC763"></div>
     <div class="box-n-1200">
         <div class="zuobian tyyj-gy">
             <div class="list-title yuanjiao">服务中心</div>
@@ -27,7 +27,7 @@
         </div>
         <div class="youbian tyyj-gy" style="min-height:600px">
             <div class="y_title">
-                <a href="/">首页</a><span> &gt; </span><a href="">服务中心</a> > 在线咨询
+                <a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/Service/indexs">服务中心</a> > 在线咨询
             </div>
             <div class="wz-title">
                 <h1>在线咨询</h1>
@@ -37,18 +37,29 @@
                     <!--循环的开始-->
                     <volist name="mess" id="v">
                     <div class="wd_out" onmouseover="this.className='wd_over'" onmouseout="this.className='wd_out'" style="margin-bottom: 18px;">
-                        <strong style="color:#000000">问：{$v.title}</strong>
+                        <strong style="color:#000000">问：{$v.content}</strong>
                         <p style="font-size: 12px;color: #999999;">{$v.addtime|date="Y-m-d H:i:s",###}
                             <p>
-                                <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">{$v.content}</p>
+                                <!-- <p style="font-size: 12px;color: #999999;margin-bottom: 18px;">{$v.content}</p> -->
                                 <p style="color:#000000"><strong style="color:#FF0000">答：</strong>{$v.answer}
                                     <p>
                     </div>
                     </volist>
                     <!--循环的结束，以下为重复代码-->
                     <!--重复代码结束，分页代码开始 -->
-                    <div id="pages">
-                        <a class="a1">43条</a> <a href="" class="a1">上一页</a> <span>1</span> <a href="">2</a> <a href="">3</a> <a href="">4</a> <a href="">5</a> <a href="" class="a1">下一页</a> </div>
+                    <div id="pages" <if condition="$totalPage eq 0"> style="display:none;"</if>>
+                        
+                        <if condition="$page elt 1">
+                            <else/>
+                        <a href="__APP__/Home/Service/consult/page/{$page-1}" class="a1">上一页</a> 
+                        </if>
+                        <span>{$page}/{$totalPage}</span>  
+                        <if condition="$page egt $totalPage">
+                            <else/>
+                        <a href="__APP__/Home/Service/consult/page/{$page+1}" class="a1">下一页</a> 
+                        </if>
+                        <a class="a1">{$article_count}条</a> 
+                    </div>
                     <div class="clear"></div>
                 </div>
                 <!--分页代码结束 -->
@@ -59,18 +70,19 @@
                 <link href="/Public/home/css/guestbook.css" rel="stylesheet" type="text/css" />
                 <link href="/Public/home/css/table_form.css" rel="stylesheet" type="text/css" />
                 <!--main-->
-                <div class="main">
+                <div class="main" style="border-top:1px solid #eee">
                     <!--left_bar-->
                     <div class="col-liuyanban">
                         <table cellspacing="1" cellpadding="0" class="table_form" width="90%" style="text-align: left">
                             <tbody>
                                 <tr>
-                                    <th>留言标题：</th>
+                                    <th>咨询内容：</th>
                                     <td>
-                                        <input type="text" value="" id="title" name="title" class="input-text" style="width:504px">
+                                        <!-- <input type="text" value="" id="title" name="title" class="input-text" style="width:504px"> -->
+                                        <textarea name="content" cols="40" rows="5" class="input-text" id="content" style='width:500px;height:70px;'></textarea>
                                     </td>
                                 </tr>
-                                <tr>
+                               <!--  <tr>
                                     <tr>
                                         <th>留言内容：</th>
                                         <td>
@@ -94,7 +106,7 @@
                                     <td>
                                         <input type="text" size="40" value="" name="email" id="email" class="input-text">
                                     </td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <th>联系电话：</th>
                                     <td>
@@ -107,7 +119,7 @@
                                         <input type="text" name="typeid" value="58" id="typeid" />
                                     </td>
                                 </tr> -->
-                                <tr>
+                              <!--   <tr>
                                     <th>所在地区：</th>
                                     <td>
                                         <div id="distpicker">
@@ -118,7 +130,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <th>验证码：</th>
                                     <td>
@@ -151,15 +163,15 @@
             $(function() {
                 $.formValidator.initConfig({ autotip: true, formid: "myform", onerror: function(msg) {} });
 
-                $("#title").formValidator({ onshow: "请输入留言标题", onfocus: "请输入留言标题" }).inputValidator({ min: 4, max: 80, onerror: "标题应该为2-10个汉字" }).regexValidator({ regexp: "ps_username", datatype: "enum", onerror: "标题格式错误" });
+                // $("#title").formValidator({ onshow: "请输入留言标题", onfocus: "请输入留言标题" }).inputValidator({ min: 4, max: 80, onerror: "标题应该为2-10个汉字" }).regexValidator({ regexp: "ps_username", datatype: "enum", onerror: "标题格式错误" });
 
-                $("#username").formValidator({ onshow: "请输入姓名", onfocus: "请输入姓名" }).inputValidator({ min: 4, max: 10, onerror: "姓名应该为2-3个汉字" }).regexValidator({ regexp: "ps_username", datatype: "enum", onerror: "姓名格式错误" });
+                // $("#username").formValidator({ onshow: "请输入姓名", onfocus: "请输入姓名" }).inputValidator({ min: 4, max: 10, onerror: "姓名应该为2-3个汉字" }).regexValidator({ regexp: "ps_username", datatype: "enum", onerror: "姓名格式错误" });
 
-                $("#email").formValidator({ onshow: "请输入电子邮箱", onfocus: "请输入电子邮箱", oncorrect: "邮箱格式正确" }).inputValidator({ min: 2, max: 32, onerror: "邮箱应该为2-32位之间" }).regexValidator({ regexp: "email", datatype: "enum", onerror: "请填写正确的邮箱地址" });
+                // $("#email").formValidator({ onshow: "请输入电子邮箱", onfocus: "请输入电子邮箱", oncorrect: "邮箱格式正确" }).inputValidator({ min: 2, max: 32, onerror: "邮箱应该为2-32位之间" }).regexValidator({ regexp: "email", datatype: "enum", onerror: "请填写正确的邮箱地址" });
 
                 //                    $("#lxqq").formValidator({onshow:"请输入QQ号码",onfocus:"请输入QQ号码",oncorrect:"QQ格式正确"}).inputValidator({min:5,max:10,onerror:"QQ号码应该为5-10位之间"}).regexValidator({regexp:"^[0-9]{5,20}$",onerror:"请填写正确的腾讯QQ号"});
 
-                $("#mobile").formValidator({ onshow: "请输入联系电话", onfocus: "请输入联系电话", oncorrect: "电话格式正确" }).inputValidator({ min: 8, max: 13, onerror: "电话号码应该为8-13为之间" }).regexValidator({ regexp: "^[0-9-]{6,13}$", onerror: "请填写正确的电话号码" });
+                // $("#mobile").formValidator({ onshow: "请输入联系电话", onfocus: "请输入联系电话", oncorrect: "电话格式正确" }).inputValidator({ min: 8, max: 13, onerror: "电话号码应该为8-13为之间" }).regexValidator({ regexp: "^[0-9-]{6,13}$", onerror: "请填写正确的电话号码" });
                 $("#content").formValidator({ onshow: "请输入留言内容", onfocus: "请输入留言内容" }).inputValidator({ min: 10, max: 200, onerror: "10-100个字之间" });
 
                 $("#code").formValidator({ onshow: "请输入验证码", onfocus: "验证码不能为空" }).inputValidator({ min: 1, max: 999, onerror: "验证码不能为空" }).ajaxValidator({
@@ -182,30 +194,31 @@
             })
             //-->
             $('#dosubmit').click(function() {
-                var sex = "";
+                // var sex = "";
 
-                if (document.getElementById("man").checked) {
-                    sex = "男";
-                }
-                if (document.getElementById("woman").checked) {
-                    sex = "女";
-                }
+                // if (document.getElementById("man").checked) {
+                //     sex = "男";
+                // }
+                // if (document.getElementById("woman").checked) {
+                //     sex = "女";
+                // }
                 $.ajax({
                     type: 'POST',
                     url: '__APP__/Home/Service/save_msg',
                     dataType: 'json',
                     data: {
-                        title: $('#title').val(),
+                        // title: $('#title').val(),
                         content: $('#content').val(),
-                        username: $('#username').val(),
-                        email: $('#email').val(),
+                        // username: $('#username').val(),
+                        // email: $('#email').val(),
                         mobile: $('#mobile').val(),
-                        sex: sex,
-                        address: $('address').val(),
+                        // sex: sex,
+                        // address: $('address').val(),
                     },
                     success: function(data) {
                         if(data==200){
                             alert("留言成功");
+                             window.location.reload();
                         }else{
                             alert("留言失败，请重试");
                         }

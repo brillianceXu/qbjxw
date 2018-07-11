@@ -22,21 +22,28 @@ class NewsController extends BaseController {
         $con['cid']=25;
         $con['status']=1;
         $gongshi=$model->where($con)->limit("0,6")->select();
+        $this->assign("gongshi",$gongshi);
         $con['cid']=26;
         $zhaopin=$model->where($con)->limit("0,6")->select();
+        $this->assign("zhaopin",$zhaopin);
         $con['cid']=27;
-        $gongsi=$model->where($con)->limit("0,6")->select();
+        $xinwen=$model->where($con)->limit("0,6")->select();
+        $this->assign("xinwen",$xinwen);
         $con['cid']=28;
         $shichang=$model->where($con)->limit("0,6")->select();
+        $this->assign("meiti",$meiti);
         $con['cid']=29;
         $meiti=$model->where($con)->limit("0,6")->select();
+        $this->assign("meiti",$meiti);
         $con['cid']=30;
         $hangye=$model->where($con)->limit("0,6")->select();
+        $this->assign("hangye",$hangye);
 
         $cond['status']=1;
         $cond['cid']=46;
         $image=M("image")->where()->select();
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
         $this->assign("image",$image);
     	$this->assign("cname",$cname);
     	$this->assign("cid",$cid);
@@ -54,8 +61,9 @@ class NewsController extends BaseController {
         $cid=I("cid");
         $cid=empty($cid)?$cate[0]['id']:$cid;
 
-        // $cname=$Cmodel->where("id=".$cid)->getField("cname");
+        $cname=$Cmodel->where("id=".$cid)->getField("cname");
         $where['cid']=$cid;
+        $where['status']=1;
         $page=$_GET['page'];
         $page=($page==null)?"1":$page;
         $pageSize=20;
@@ -64,7 +72,8 @@ class NewsController extends BaseController {
         $start=($page-1)*$pageSize;
 
         $mess=$model->where($where)->limit($start,$pageSize)->select();
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
         $this->assign("cname",$cname);
         $this->assign("cid",$cid);
         $this->assign("page",$page);
@@ -84,13 +93,19 @@ class NewsController extends BaseController {
 
     	$mess=$model->where($where)->find();
     	$cid=$mess['cid'];
-    	// $cname=$Cmodel->where("id=".$cid)->getField("cname");
-
+    	$cname=$Cmodel->where("id=".$cid)->getField("cname");
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
     	// print_r($mess);exit;
     	$this->assign("cid",$cid);
-    	// $this->assign("cname",$cname);
+    	$this->assign("cname",$cname);
     	$this->assign("cate",$cate);
     	$this->assign("mess",$mess);
         $this->display();
+    }
+    public function get_banner(){
+        $imodel=M("image");
+        $banner=$imodel->where("cid = 13 and status = 1")->getField("route");
+        return $banner;
     }
 }

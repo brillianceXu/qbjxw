@@ -3,13 +3,14 @@
 
 <head>
     <include file="Public:header" />
+    <title>{$cname}  - 产品中心 - 黔北酒乡网</title>
 </head>
 
 <body>
     <div class="top">
         <include file="Public:nav" />
     </div>
-    <div class="box-ntop" style="background-image: url(images/20160101122150780.jpg);background-color: #5CBFDD;"></div>
+    <div class="box-ntop" style="background-image: url({$banner});background-color: #5CBFDD;"></div>
     <div class="cpfl tyyj-gy">
         <div class="wrap">
             <div class="daohang"> <span></span><a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/Goods/index">产品中心</a> > {$cname}</div>
@@ -40,7 +41,18 @@
         </volist>
         
         <div class="clear"></div>
-        <div id="pages"><a class="a1">178条</a> <a href="__APP__/Home/Goods/index" class="a1">上一页</a> <span>1</span> <a href="__APP__/Home/Goods/index">2</a> <a href="__APP__/Home/Goods/index">3</a> <a href="__APP__/Home/Goods/index">4</a> <a href="__APP__/Home/Goods/index">5</a> <a href="__APP__/Home/Goods/index">6</a> <a href="__APP__/Home/Goods/index">7</a> <a href="__APP__/Home/Goods/index">8</a> <a href="__APP__/Home/Goods/index">9</a> <a href="__APP__/Home/Goods/index" class="a1">下一页</a></div>
+        <div id="pages" <if condition="$totalPage eq 0"> style="display:none;"</if>>
+            <if condition="$page elt 1">
+                <else/>
+            <a href="__APP__/Home/Goods/index{$str}/page/{$page-1}" class="a1">上一页</a> 
+            </if>
+            <span>{$page}/{$totalPage}</span>  
+            <if condition="$page egt $totalPage">
+                <else/>
+            <a href="__APP__/Home/Goods/index{$str}/page/{$page+1}" class="a1">下一页</a> 
+            </if>
+            <a class="a1">{$article_count}条</a> 
+        </div>
         <div class="clear"></div>
     </div>
 

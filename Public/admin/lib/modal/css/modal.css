@@ -3,7 +3,7 @@ h4 {
 }
 
 p {
-    text-align: center;
+    /*text-align: center;*/
 }
 
 /*.btn {
@@ -37,7 +37,7 @@ p {
     justify-content: space-between;
     width: 50%;
     max-width: 700px;
-    height: 40%;
+    height: auto;
     max-height: 500px;
     margin: 100px auto;
     border-radius: 10px;
@@ -67,6 +67,7 @@ p {
 }
 
 .modalBox-header {
+    padding: 20px;
     box-sizing: border-box;
     border-bottom: 1px solid #ccc;
     display: flex;
@@ -74,7 +75,10 @@ p {
     align-items: center;
 }
 
-.close {
+.close_hide {
+    position: relative;
+    top: -20px;
+    right: -20px;
     color: #b7b7b7;
     font-size: 30px;
     font-weight: bold;
@@ -82,20 +86,21 @@ p {
     transition: all 0.3s;
 }
 
-.close:hover,
-.close:focus {
+.close_hide:hover,
+.close_hide:focus {
     color: #95b4ed;
     text-decoration: none;
     cursor: pointer;
 }
 
 .modalBox-body {
-    padding: 10px;
+    padding: 20px;
     font-size: 14px;
     box-sizing: border-box;
 }
 
 .modalBox-footer {
+    padding: 20px;
     box-sizing: border-box;
     border-top: 1px solid #ccc;
     display: flex;

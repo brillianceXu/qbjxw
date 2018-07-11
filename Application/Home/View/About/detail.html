@@ -3,13 +3,14 @@
 
 <head>
     <include file="Public:header"/>
+    <title>{$mess.title} -  企业概况 - 黔北酒乡网</title>
 </head>
 
 <body>
     <div class="top">
         <include file="Public:nav"/>
     </div>
-    <div class="box-ntop" style="background-image: url(images/20151231030339132.jpg);background-color: #2293FD"></div>
+    <div class="box-ntop" style="background-image: url({$banner});background-color: #2293FD"></div>
     <div class="box-n-1200">
         <div class="zuobian tyyj-gy">
             <div class="list-title yuanjiao">企业概况</div>
@@ -28,7 +29,7 @@
         </div>
         <div class="youbian tyyj-gy" style="min-height:600px">
             <div class="y_title">
-                <a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/About/index">企业概况</a>  > {$mess.title}
+                <a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/About/about">企业概况</a>  > {$mess.title}
             </div>
             <div class="wz-title">
                 <h1>{$mess.title}</h1>

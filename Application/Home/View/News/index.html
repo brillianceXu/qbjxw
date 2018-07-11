@@ -66,14 +66,14 @@
 
     -->
     </style>
-    <title>新闻资讯 - 国酒茅台-官网</title>
+    <title>{$cname}  - 新闻资讯 - 黔北酒乡网</title>
 </head>
 
 <body>
     <div class="top">
         <include file="Public:nav" />
     </div>
-    <div class="box-ntop" style="background-image: url(images/20160119090335319_2.jpg);background-color:#4D70B4;"></div>
+    <div class="box-ntop" style="background-image: url({$banner});background-color:#4D70B4;"></div>
     <div class="box-n-1200">
         <div class="zuobian tyyj-gy">
             <div class="list-title yuanjiao">新闻资讯</div>
@@ -104,7 +104,7 @@
             <div class="div460 tyyj-gy" style="margin-right: 20px;">
                 <div class="title9"><span class="dqwzyb">+ <a href="__APP__/Home/News/news/cid/27">更多</a></span>公司新闻</div>
                 <ul>
-                    <volist name="gongsi" id="v">
+                    <volist name="xinwen" id="v">
                     <li>&gt; <a href="__APP__/Home/News/detail/id/{$v.id}">{$v.title} </a></li>
                     </volist>
                 </ul>

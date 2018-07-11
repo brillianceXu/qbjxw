@@ -61,16 +61,15 @@
         background-position: left top;
     }
 
-    -->
     </style>
-    <title>投资者关系 - 国酒茅台-官网</title>
+    <title>合作者关系 - 黔北酒乡网</title>
 </head>
 
 <body>
     <div class="top">
         <include file="Public:nav" />
     </div>
-    <div class="box-ntop" style="background-image: url(images/20160119090736772.jpg);background-color: #76C0DE;"></div>
+    <div class="box-ntop" style="background-image: url({$banner});background-color: #76C0DE;"></div>
     <div class="box-n-1200">
         <div class="zuobian tyyj-gy">
             <div class="list-title yuanjiao">投资者关系</div>
@@ -83,7 +82,7 @@
         <div class="youbian tyyj-gy" style="margin-bottom: 20px;">
             <div class="y_title">
                 <!-- <h2>合作者关系</h2> -->
-                <p><a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/Business/index">合作者关系</a> > </p>
+                <p><a href="/">首页</a><span> &gt; </span>合作者关系</p>
             </div>
            <!--  <a href="http://2016.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=600519" target="_blank" title="进入查看茅台股票详细信息">
                 <div style="margin-bottom: 50px;margin-top: 30px;margin-right: 50px;margin-left:50px;">
@@ -99,7 +98,7 @@
         <div class="d940 tyyj-gy">
             <div class="title9"><span class="dqwzyb">+ <a href="__APP__/Home/Business/show/cid/40">更多</a></span>公司公告</div>
             <ul>
-               <volist name="shichang" id="v">
+               <volist name="gonggao" id="v">
                 <li><span class="date">{$v.news_time|date="Y-m-d",###}  </span>&gt; <a href="__APP__/Home/Business/detail/id/{$v.id}">{$v.title}</a></li>
                 </volist>
              
@@ -108,7 +107,7 @@
         <div class="d940 tyyj-gy">
             <div class="title9"><span class="dqwzyb">+ <a href="__APP__/Home/Business/show/cid/41">更多</a></span>财务报告</div>
             <ul>
-                 <volist name="shichang" id="v">
+                 <volist name="caiwu" id="v">
                 <li><span class="date">{$v.news_time|date="Y-m-d",###}  </span>&gt; <a href="__APP__/Home/Business/detail/id/{$v.id}">{$v.title}</a></li>
                 </volist>
             </ul>

@@ -17,9 +17,9 @@ class ServiceController extends BaseController {
       	$start=($page-1)*$pageSize;
 
     	$mess=$model->where($where)->limit($start,$pageSize)->order("id desc")->select();
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
     	$this->assign("cname",$cname);
-    	$this->assign("cid",$cid);
     	$this->assign("page",$page);
     	$this->assign("totalPage",$totalPage);
     	$this->assign("article_count",$article_count);
@@ -32,12 +32,14 @@ class ServiceController extends BaseController {
     	$model=M("news");
     	$cate=$Cmodel->where("pid=4 and status=2")->select();
     	$cid=I("cid");
-    	$where['cid']=$cid;
+        $where['cid']=$cid;
+    	$where['status']=1;
     		
 
     	$mess=$model->where($where)->find();
     	// $cname=$Cmodel->where("id=".$cid)->getField("cname");
-
+        $banner=$this->get_banner();
+        $this->assign("banner",$banner);
     	// print_r($mess);exit;
     	$this->assign("cid",$cid);
     	// $this->assign("cname",$cname);
@@ -78,5 +80,10 @@ class ServiceController extends BaseController {
         }else{
             $this->ajaxReturn("200");
         }
+    }
+    public function get_banner(){
+        $imodel=M("image");
+        $banner=$imodel->where("cid = 15 and status = 1")->getField("route");
+        return $banner;
     }
 }

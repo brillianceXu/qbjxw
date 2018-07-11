@@ -392,7 +392,7 @@ text-overflow:ellipsis;
 		.slideGroup .parBd ul li .pic{ text-align:center; }
 		.slideGroup .parBd ul li .pic img{ width:120px; height:90px; display:block;  padding:2px; border:1px solid #ccc; }
 		.slideGroup .parBd ul li .pic a:hover img{ border-color:#999;  }
-		.slideGroup .parBd ul li .title{ line-height:24px;   }
+		.slideGroup .parBd ul li .title{ line-height:24px;font-size: 12px;   }
 .more {
 	float: right;
 }

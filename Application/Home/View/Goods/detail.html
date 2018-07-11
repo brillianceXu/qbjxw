@@ -4,9 +4,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <include file="Public:header" />
-    <title>{$mess.title}</title>
+    <title>{$mess.title} - {$cname}  - 产品中心 - 黔北酒乡网</title>
     <style type="text/css">
-    <!-- .cp-box {
+    .cp-box {
         margin-right: 50px;
         margin-left: 50px;
         padding-top: 30px;
@@ -166,7 +166,7 @@
     <div class="top">
         <include file="Public:nav" />
     </div>
-    <div class="box-ntop" style="background-image: url(images/20160101122150780.jpg);background-color: #5CBFDD"></div>
+    <div class="box-ntop" style="background-image: url({$banner});background-color: #5CBFDD"></div>
     <div class="box-n-1200">
         <div class="zuobian tyyj-gy">
             <div class="list-title yuanjiao">产品中心</div>
@@ -178,7 +178,7 @@
         </div>
         <div class="youbian tyyj-gy" style="min-height:800px">
             <div class="y_title">
-                <a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/Goods/index">产品中心</a> > <a href="">其他酱香系列</a> > <a href="">贵州大曲</a> >
+                <a href="/">首页</a><span> &gt; </span><a href="__APP__/Home/Goods/index">产品中心</a> > <a href="__APP__/Home/Goods/index/cid/{$cid}">{$cname}</a> > <a href="">{$mess.name}</a>
             </div>
             <div class="cp-box" style="margin-bottom: 0px;">
                 <div class="lanrenzhijia">
