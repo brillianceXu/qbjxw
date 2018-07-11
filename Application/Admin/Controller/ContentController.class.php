@@ -202,6 +202,7 @@ class ContentController extends BaseController {
       $status=2;
       $data['id']=$rid;
       $data['updatetime']=$updatetime;
+      $data['answer']=$answer;
       $data['status']=$status;
       $res=$model->add($data);
       if($res){
