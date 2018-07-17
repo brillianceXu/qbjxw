@@ -22,14 +22,14 @@ class AboutController extends BaseController {
         $where['cid']=$cid;
         $where['status'] = 1;
     	$mess=$model->where($where)->find();
-
-        $article=$model->where($con)->find();
+        // print_r($mess);exit;
+        // $article=$model->where($con)->find();
 
         $this->assign("cate",$cate);
         $this->assign("cname",$cname);
         
         $this->assign("mess",$mess);
-    	$this->assign("article",$article);
+    	// $this->assign("article",$article);
         $this->display();
     }
     public function index(){

@@ -25,24 +25,59 @@
 					</volist>
 				</volist>
 				</select>
-				</span> </div>
+				</span> 
+			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">规格：</label>
+			<label class="form-label col-xs-4 col-sm-2">单位：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="{$mes.unit}" placeholder="" id="" name="unit">
+				<span class="select-box">
+				<select name="unit" class="select">
+					<option value="1" >件</option>
+					<option value="2" >瓶</option>
+				</select>
+				</span>
+				<!-- <input type="text" class="input-text" value="{$mes.unit}" placeholder="" id="" name="unit"> -->
 			</div>
-			<div class="formControls col-xs-4 col-sm-2">
-				/件
-			</div>
+			
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">价格：</label>
 			<div class="formControls col-xs-4 col-sm-2">
-				<input type="text" class="input-text" value="{$mes.price}" placeholder="" id="" name="price">
+				<input type="number" class="input-text" value="{$mes.price}" placeholder="" id="" name="price">
 			</div>
 			<div class="formControls col-xs-4 col-sm-2">
 				/元
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">香型：</label>
+			<div class="formControls col-xs-4 col-sm-2">
+				<input type="text" class="input-text" value="{$mes.odor_type}" placeholder="" id="" name="odor_type">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">酒精度：</label>
+			<div class="formControls col-xs-4 col-sm-2">
+				<input type="number" class="input-text" value="{$mes.degree}" placeholder="" id="" name="degree">
+			</div>
+			<div class="formControls col-xs-4 col-sm-2">
+				%vol
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">包装：</label>
+			<div class="formControls col-xs-6 col-sm-4">
+				<input type="text" class="input-text" value="{$mes.packing}" placeholder="" id="" name="packing">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">净含量：</label>
+			<div class="formControls col-xs-4 col-sm-2">
+				<input type="number" class="input-text" value="{$mes.net_wt}" placeholder="" id="" name="net_wt">
+			</div>
+			<div class="formControls col-xs-4 col-sm-2">
+				ml
 			</div>
 		</div>
 		<div class="row cl">
@@ -70,6 +105,12 @@
 					<div id="preview" style="display: none;padding-top: 12px;"></div> 
 					</if> 
 				</div>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">购买链接：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$mes.buy_link}" placeholder="" id="" name="buy_link">
 			</div>
 		</div>
 		<div class="row cl">

@@ -31,7 +31,7 @@ class NewsController extends BaseController {
         $this->assign("xinwen",$xinwen);
         $con['cid']=28;
         $shichang=$model->where($con)->limit("0,6")->select();
-        $this->assign("meiti",$meiti);
+        $this->assign("shichang",$shichang);
         $con['cid']=29;
         $meiti=$model->where($con)->limit("0,6")->select();
         $this->assign("meiti",$meiti);

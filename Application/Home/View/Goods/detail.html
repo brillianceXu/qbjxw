@@ -204,16 +204,18 @@
                 </div>
                 <div class="cp-js">
                     <h1>{$mess.name}</h1>
-                    <p style="font-size: 16px;line-height: 26px;color: #999999; font-weight:400; font-family:'微软雅黑', '黑体'; text-indent: 2em;margin-bottom:-10px; padding-top:15px;">—— {$mess.nickname}
-                        <div class="clear"></div>
+                    <p style="font-size: 16px;line-height: 26px;color: #999999; font-weight:400; font-family:'微软雅黑', '黑体'; text-indent: 2em;padding-top:15px;">—— {$mess.nickname}
+                        <!-- <div class="clear"></div> -->
                     </p>
-                    <p><strong>名&nbsp;&nbsp;称</strong>：{$mess.name}</p>
-                    <p><strong>香&nbsp;&nbsp;型</strong>：酱香型</p>
-                    <p><strong>酒精度</strong>：{$mess.degree}%vol</p>
-                    <p><strong>净含量</strong>：{$mess.net_wt}ml </p>
-                    <p><strong>总代理</strong>：</p>
-                    <p><strong>包&nbsp;&nbsp;装</strong>：彩盒、酒瓶、外箱</p>
-                    <p class="cp-js-img"><a href="/" target="_blank"><img src="/Public/home/picture/sp.gif" alt="" title="" border="0" /></a></p>
+                    <p style="height: auto;margin-top: 20px;margin-bottom: 10px;"><strong>价&nbsp;&nbsp;格</strong>： <i style="color: red;font-weight: bold;font-size: 60px"> ¥ {$mess.price}</i></p>
+                    <p><strong>单&nbsp;&nbsp;位</strong>：<if condition="$mess.unit eq 1">件<elseif condition="$mess.unit eq 2"/>瓶</if></p>
+                    <p><strong>香&nbsp;&nbsp;型</strong>：{$mess.odor_type}</p>
+                    <p><strong>酒 精 度</strong>：{$mess.degree}%vol</p>
+                    <p><strong>净 含 量</strong>：{$mess.net_wt}ml </p>
+                    <p><strong>包&nbsp;&nbsp;装</strong>：{$mess.packing}</p>
+                    <p>生产日期：{$mess.product_date}</p>
+                    <p>上市日期：{$mess.market_date}</p>
+                    <p class="cp-js-img" style="padding-top: 20px;"><a href="{$mess.buy_link}" target="_blank" style="padding: 10px 20px;background: green;color:white;">购买</a></p>
                 </div>
                 <div class="clear"></div>
             </div>

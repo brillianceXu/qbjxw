@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <include file="Public:header"/>
+</head>
+
+<body>
+    <div class="daohang">
+    
+        <include file="Public:nav"/>
+    </div>
+    <div class="top-img" style="background-image: url({$banner['6']['route']});background-color: #A7BDCA"></div>
+    <div style="width: 100%;height: auto;">
+        <div style="width: 1200px;margin:0 auto;">
+            <ol class="breadcrumb" style="background: none;">
+                <li><a href="/">首页</a></li>
+                <li><a href="__APP__/Home/Culture/index/cid/{$cid}.html">白酒文化</a></li>
+                <li class="active">{$mess.title}</li> 
+            </ol>
+            <!-- <div class="dqwz" style="font-size: 12px;line-height: 16px; padding-top: 10px;  padding-right: 50px; padding-bottom: 20px;padding-left: 10px;"><a href="http://www.china-moutai.com">首页</a><span> &gt; </span><a href="http://www.china-moutai.com/pinpai/">品牌战略</a> > <a href="http://www.china-moutai.com/pinpai/pinpaizhanlue/">品牌战略</a> > </div> -->
+        </div>
+    </div>
+    <div class="n-box">
+        <div class="zuobian" style="min-height:80px;">
+            <div class="list-group" style="margin-bottom: 0px;">
+                <a href="#" class="list-group-item active">
+                    <h4 class="list-group-item-heading">白酒文化</h4>
+                </a>
+                <volist name="cate" id="v">
+                <a href="__APP__/Home/Culture/index/cid/{$v.id}.html" class="list-group-item " <if condition="$v.id eq $cid">style="color:red;"</if>>{$v.cname}<span class="f-r" style="float: right;"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+                </volist>
+            </div>
+        </div>
+        <div class="youbian">
+            <div class="title-h1">
+                <h1>{$mess.title}</h1> </div>
+            <div style="font-size: 12px;line-height: 30px;text-align: center;margin-right: auto;margin-left: auto; margin-top:-27px;"> <i class="fa fa-calendar"></i> {$mess['published']|date="Y-m-d",###} &nbsp; &nbsp;&nbsp; 作者：{$mess.author} &nbsp;&nbsp; </div>
+            <div class="wenzhang" style="min-height:400px;">
+                {$mess.content}
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="dibu">
+        <include file="Public:footer"/>
+    </div>
+</body>
+
+</html>
